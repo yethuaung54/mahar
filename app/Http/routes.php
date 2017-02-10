@@ -12,6 +12,7 @@
 */
 use App\Task;
 
+Route::get('/', 'HomeController@index');
 
 Route::get('/hello', function(Task $task) {
         return $task->get();
