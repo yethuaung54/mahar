@@ -27,5 +27,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('itemcategory', 'HomeController@itemCategory');
     Route::get('wishlist', 'HomeController@wishList');
     Route::get('orderform', 'HomeController@orderForm');
+    Route::get('myaccount', 'HomeController@account');
 
 });

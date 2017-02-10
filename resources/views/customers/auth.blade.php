@@ -27,6 +27,10 @@
 										<h2 class="title">Register</h2>
 										<p><input type="text" value="Username *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
 										<p><input type="text" value="E-mail *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
+										<p>
+											<input type="radio" name="gender" value="customer" checked> Customer
+											<input type="radio" name="gender" value="vendor"> Vendor <br>
+										</p>
 										<p><input type="text" value="Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
 										<p><input type="text" value="Confirm Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
 										<p><input type="submit" value="Register" /></p>

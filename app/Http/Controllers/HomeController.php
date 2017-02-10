@@ -55,4 +55,9 @@ class HomeController extends Controller
     {
         return view('customers.order');
     }
+
+    public function account()
+    {
+        return view('customers.accountview');
+    }
 }
