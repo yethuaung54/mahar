@@ -12,10 +12,20 @@
 */
 use App\Task;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/hello', function(Task $task) {
-   return $task->get();
+        return $task->get();
+});
+
+Route::group(['prefix' => 'user'], function () {
+
+    Route::get('home', 'HomeController@index');
+    Route::get('about', 'HomeController@about');
+    Route::get('contact', 'HomeController@contact');
+    Route::get('loginform', 'HomeController@loginForm');
+    Route::get('itemdetail', 'HomeController@itemDetail');
+    Route::get('itemcategory', 'HomeController@itemCategory');
+    Route::get('wishlist', 'HomeController@wishList');
+    Route::get('orderform', 'HomeController@orderForm');
+
 });
