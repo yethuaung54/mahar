@@ -12,7 +12,9 @@
 */
 use App\Task;
 
-Route::get('/', 'HomeController@index');
+Route::get('/', function(){
+    return redirect('/user/home');
+});
 
 Route::get('/hello', function(Task $task) {
         return $task->get();
