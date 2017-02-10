@@ -10,7 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Task;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/hello', function(Task $task) {
+   return $task->get();
 });
