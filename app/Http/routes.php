@@ -15,6 +15,7 @@ use App\Task;
 
 Route::get('/hello', function(Task $task) {
         return $task->get();
+
 });
 
 Route::group(['prefix' => 'user'], function () {
@@ -28,5 +29,14 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('wishlist', 'HomeController@wishList');
     Route::get('orderform', 'HomeController@orderForm');
     Route::get('myaccount', 'HomeController@account');
+
+});
+Route::group(['prefix' => 'vendor'], function () {
+
+    Route::get('home', 'VendorController@index');
+    Route::get('myposts', 'VendorController@myPosts');
+    Route::get('buyerposts', 'VendorController@buyerPosts');
+    Route::get('newitem', 'VendorController@newItem');
+    
 
 });
