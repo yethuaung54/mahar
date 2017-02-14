@@ -29,6 +29,13 @@ Route::group(['prefix' => 'dealer'], function () {
     Route::get('register', 'Dealer\Auth\Authcontroller@showRegistrationForm');
     Route::post('register', 'Dealer\Auth\Authcontroller@register');
 
+    Route::get('home', 'VendorController@index');
+    Route::get('myposts', 'VendorController@myPosts');
+    Route::get('buyerposts', 'VendorController@buyerPosts');
+    Route::get('newitem', 'VendorController@newItem');
+    Route::get('loginform', 'VendorController@loginForm');
+    Route::get('myaccount', 'VendorController@myAccount');
+
 });
 
 Route::group(['prefix' => 'user'], function () {
@@ -42,18 +49,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('wishlist', 'HomeController@wishList');
     Route::get('orderform', 'HomeController@orderForm');
     Route::get('myaccount', 'HomeController@account');
-
-});
-Route::group(['prefix' => 'dealer'], function () {
-
-    Route::get('home', 'VendorController@index');
-    Route::get('myposts', 'VendorController@myPosts');
-    Route::get('buyerposts', 'VendorController@buyerPosts');
-    Route::get('newitem', 'VendorController@newItem');
-    Route::get('loginform', 'VendorController@loginForm');
-    Route::get('myaccount', 'VendorController@myAccount');
-
-
 
 });
 Route::group(['prefix'=>'admin'],function(){
