@@ -22,12 +22,12 @@ Route::get('/hello', function(Task $task) {
 
 Route::group(['prefix' => 'dealer'], function () {
 
-    Route::get('login', 'Dealer\Auth\Authcontroller@showLoginForm');
-    Route::post('login', 'Dealer\Auth\Authcontroller@login');
-    Route::get('logout', 'Dealer\Auth\Authcontroller@logout');
+    Route::get('login', 'Dealer\Auth\AuthController@showLoginForm');
+    Route::post('login', 'Dealer\Auth\AuthController@login');
+    Route::get('logout', 'Dealer\Auth\AuthController@logout');
     // For Vendor Register
-    Route::get('registerform', 'Dealer\Auth\Authcontroller@showRegistrationForm');
-    Route::post('register', 'Dealer\Auth\Authcontroller@register');
+    Route::get('registerform', 'Dealer\Auth\AuthController@showRegistrationForm');
+    Route::post('register', 'Dealer\Auth\AuthController@register');
 
     Route::get('home', 'VendorController@index');
     Route::get('myposts', 'VendorController@myPosts');
