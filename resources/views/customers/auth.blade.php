@@ -27,48 +27,45 @@
 										<h2 class="title">Register</h2>
 										<p><input type="text" value="Username *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
 										<p><input type="text" value="E-mail *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-										<p>
-											<input type="radio" name="gender" value="customer" checked> Customer
-											<input type="radio" name="gender" value="vendor"> Vendor <br>
-										</p><br>
+										{{--<br>
 										<div id="id-custom-fields">
 											<div class="form-group">
 												<div class="margiv-top-10">
 													<a href="javascript:;" onClick="addCustomField(); return false;"style="margin-top: 230px;margin-right: 96px;"> Add Your Company Info If You Are Vendor </a>
 												</div>
 											</div>
-										</div>
+										</div>--}}
 										<p><input type="text" value="Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
 										<p><input type="text" value="Confirm Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
 										<h4>Image</h4>
 										<p><input type="file" value="Image *" /></p>
 
 										<p><input type="submit" value="Register" /></p>
-										<script type="text/javascript">
+										{{--<script type="text/javascript">--}}
 
-											var customFieldIndex = 0;
+											{{--var customFieldIndex = 0;--}}
 
-											function addCustomField() {
-												var $ = jQuery;
-												customFieldIndex++;
-												var html = '\
-											<div id="id-custom-field-' + customFieldIndex + '" class="form-group" style="padding-bottom: 30px;">\
-													<p><input type="text" name="companyname" placeholder="Name *" </p>\
-													<p><input type="text" name="companydesc" placeholder="Info *" /></p>\
-												  <div class="col-md-7">\
-													<a href="#" class="submit" onClick="removeCustomField(' + customFieldIndex + '); return false;"><i class="entypo-trash"></i> Remove</a>\
-												  </div>\
-											</div>';
-												$("#id-custom-fields").append(html);
-											}
-											function removeCustomField(i) {
-												var $ = jQuery;
-												var cf = $("#id-custom-field-" + i);
-												if (cf != undefined) {
-													cf.remove();
-												}
-											}
-										</script>
+											{{--function addCustomField() {--}}
+												{{--var $ = jQuery;--}}
+												{{--customFieldIndex++;--}}
+												{{--var html = '\--}}
+											{{--<div id="id-custom-field-' + customFieldIndex + '" class="form-group" style="padding-bottom: 30px;">\--}}
+													{{--<p><input type="text" name="companyname" placeholder="Name *" </p>\--}}
+													{{--<p><input type="text" name="companydesc" placeholder="Info *" /></p>\--}}
+												  {{--<div class="col-md-7">\--}}
+													{{--<a href="#" class="submit" onClick="removeCustomField(' + customFieldIndex + '); return false;"><i class="entypo-trash"></i> Remove</a>\--}}
+												  {{--</div>\--}}
+											{{--</div>';--}}
+												{{--$("#id-custom-fields").append(html);--}}
+											{{--}--}}
+											{{--function removeCustomField(i) {--}}
+												{{--var $ = jQuery;--}}
+												{{--var cf = $("#id-custom-field-" + i);--}}
+												{{--if (cf != undefined) {--}}
+													{{--cf.remove();--}}
+												{{--}--}}
+											{{--}--}}
+										{{--</script>--}}
 									</form>
 								</div>		
 							</div>
