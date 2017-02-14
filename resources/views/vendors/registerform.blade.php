@@ -118,7 +118,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <div id="register_tnc_error"> </div>
         </div>
         <div class="form-actions">
-            <button id="register-back-btn" type="button" class="btn red btn-outline"> Back </button>
+            <button id="register-back-btn" type="button" class="btn red btn-outline"><a href="loginform">Back </a></button>
             <button type="submit" id="register-submit-btn" class="btn green pull-right"> Sign Up </button>
         </div>
     </form>
