@@ -44,7 +44,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('myaccount', 'HomeController@account');
 
 });
-Route::group(['prefix' => 'vendor'], function () {
+Route::group(['prefix' => 'dealer'], function () {
 
     Route::get('home', 'VendorController@index');
     Route::get('myposts', 'VendorController@myPosts');
