@@ -27,4 +27,14 @@ class VendorController extends Controller
     {
         return view('vendors.newitem');
     }
+
+    public function loginForm()
+    {
+        return view('vendors.loginform');
+    }
+
+    public function myAccount()
+    {
+        return view('vendors.myaccount');
+    }
 }

@@ -40,6 +40,15 @@ Route::group(['prefix' => 'vendor'], function () {
     Route::get('myposts', 'VendorController@myPosts');
     Route::get('buyerposts', 'VendorController@buyerPosts');
     Route::get('newitem', 'VendorController@newItem');
-    
+    Route::get('loginform', 'VendorController@loginForm');
+    Route::get('myaccount', 'VendorController@myAccount');
 
+
+});
+Route::group(['prefix'=>'admin'],function(){
+   Route::get('loginform','AdminController@loginForm');
+   Route::get('home','AdminController@index');
+   Route::get('vendorposts','AdminController@vendorPost');
+   Route::get('buyerposts','AdminController@buyerPost');
+   Route::get('allusers','AdminController@allUser');
 });
