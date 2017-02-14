@@ -56,6 +56,7 @@ Route::group(['prefix'=>'admin'],function(){
    Route::get('home','AdminController@index');
    Route::get('vendorposts','AdminController@vendorPost');
    Route::get('buyerposts','AdminController@buyerPost');
+   Route::get('myaccount','AdminController@myAccount');
    Route::get('allusers','AdminController@allUser');
 
 });

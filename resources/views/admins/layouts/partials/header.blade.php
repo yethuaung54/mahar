@@ -84,12 +84,12 @@ License: You must have a valid license purchased only from themeforest(the above
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
-                                <a href="page_user_profile_1.html">
+                                <a href="myaccount">
                                     <i class="icon-user"></i> My Profile </a>
                             </li>
 
                             <li>
-                                <a href="page_user_login_1.html">
+                                <a href="myaccount">
                                     <i class="icon-key"></i> Log Out </a>
                             </li>
                         </ul>

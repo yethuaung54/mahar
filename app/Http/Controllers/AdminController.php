@@ -31,4 +31,9 @@ class AdminController extends Controller
     {
         return view('admins.allusers');
     }
+
+    public function myAccount()
+    {
+        return view('admins.myaccount');
+    }
 }
