@@ -26,7 +26,7 @@ Route::group(['prefix' => 'dealer'], function () {
     Route::post('login', 'Dealer\Auth\Authcontroller@login');
     Route::get('logout', 'Dealer\Auth\Authcontroller@logout');
     // For Vendor Register
-    Route::get('register', 'Dealer\Auth\Authcontroller@showRegistrationForm');
+    Route::get('registerform', 'Dealer\Auth\Authcontroller@showRegistrationForm');
     Route::post('register', 'Dealer\Auth\Authcontroller@register');
 
     Route::get('home', 'VendorController@index');
