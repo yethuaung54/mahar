@@ -4,10 +4,7 @@
  * @author HlaingTinHtun <hlaingtinhtun@gmail.com>
  * @copyright 2017 - Freelance Inc.
  **/
-/**
- * @author HlaingTinHtun <hlaingtinhtun@gmail.com>
- * @copyright 2017 - Freelance Inc.
- **/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

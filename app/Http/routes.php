@@ -17,7 +17,18 @@ Route::get('/', function(){
 });
 
 Route::get('/hello', function(Task $task) {
-        return $task->get();
+    return $task->get();
+});
+
+Route::group(['prefix' => 'dealer'], function () {
+
+    Route::get('login', 'Dealer\Auth\Authcontroller@showLoginForm');
+    Route::post('login', 'Dealer\Auth\Authcontroller@login');
+    Route::get('logout', 'Dealer\Auth\Authcontroller@logout');
+    // For Vendor Register
+    Route::get('register', 'Dealer\Auth\Authcontroller@showRegistrationForm');
+    Route::post('register', 'Dealer\Auth\Authcontroller@register');
+
 });
 
 Route::group(['prefix' => 'user'], function () {
@@ -32,3 +43,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('orderform', 'HomeController@orderForm');
 
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
