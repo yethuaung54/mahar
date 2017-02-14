@@ -17,7 +17,17 @@ Route::get('/', function(){
 });
 
 Route::get('/hello', function(Task $task) {
-        return $task->get();
+    return $task->get();
+});
+
+Route::group(['prefix' => 'dealer'], function () {
+
+    Route::get('login', 'Dealer\Auth\Authcontroller@showLoginForm');
+    Route::post('login', 'Dealer\Auth\Authcontroller@login');
+    Route::get('logout', 'Dealer\Auth\Authcontroller@logout');
+    // For Vendor Register
+    Route::get('register', 'Dealer\Auth\Authcontroller@showRegistrationForm');
+    Route::post('register', 'Dealer\Auth\Authcontroller@register');
 
 });
 
@@ -44,6 +54,7 @@ Route::group(['prefix' => 'vendor'], function () {
     Route::get('myaccount', 'VendorController@myAccount');
 
 
+
 });
 Route::group(['prefix'=>'admin'],function(){
    Route::get('loginform','AdminController@loginForm');
@@ -51,4 +62,7 @@ Route::group(['prefix'=>'admin'],function(){
    Route::get('vendorposts','AdminController@vendorPost');
    Route::get('buyerposts','AdminController@buyerPost');
    Route::get('allusers','AdminController@allUser');
+
 });
+
+Route::auth();
