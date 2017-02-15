@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dealer\Auth;
 
-use App\User;
+use App\Dealer;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -66,10 +66,10 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Dealer::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'role' => $data ['type'],
+            'role' => $data['type'],
             'password' => bcrypt($data['password']),
         ]);
     }
@@ -78,6 +78,7 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
+
     public function showRegistrationForm()
     {
         return view('vendors.registerform');
