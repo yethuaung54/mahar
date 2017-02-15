@@ -16,6 +16,7 @@ class CreateCategoryTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('weight');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

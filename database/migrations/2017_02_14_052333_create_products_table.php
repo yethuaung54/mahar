@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
              $table->string('image_url');
              $table->text('hashtag');
              $table->text('custom_field');
-             
+             $table->string('slug')->unique();
              $table->integer('cat_id')->unsigned();
              $table->foreign('cat_id')->references('id')->on('product_category')->onDelete('cascade');
 
