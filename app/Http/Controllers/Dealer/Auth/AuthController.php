@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Auth;
+use Illuminate\Http\Request;
+use App\Http\Requests;
 
 class AuthController extends Controller
 {
@@ -30,7 +32,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = 'dealer/myaccount';
    
     /**
      * Create a new authentication controller instance.
@@ -51,10 +53,13 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-            'type' => 'required|in:2,3'
+            'name'    => 'required|max:255',
+            'email'   => 'required|email|max:255|unique:dealers',
+            'password'=> 'required|min:6|confirmed',
+            'company' => 'required|max:255',
+            'city'    => 'required|max:255',
+            'address' => 'required|max:255',
+            'terms'   => 'required|min:1'
         ]);
     }
 
@@ -69,14 +74,18 @@ class AuthController extends Controller
         return Dealer::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'role' => $data['type'],
+            'role' => '2',
+            'city' => $data['city'],
+            'company' => $data['company'],
+            'address' => $data['address'],
             'password' => bcrypt($data['password']),
         ]);
     }
-
+   
     public function showLoginForm()
     {
-        return view('auth.login');
+        // return view('auth.login');
+        return view('vendors.loginform');
     }
 
     public function showRegistrationForm()
@@ -84,4 +93,6 @@ class AuthController extends Controller
         return view('vendors.registerform');
     }  
 
+
+  
 }
