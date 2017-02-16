@@ -107,6 +107,7 @@
                                 @endif
                             </div>
                         </div>
+                        
                         <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
                              <div class="col-md-6 col-md-offset-4">
                              <input type="radio" name="type" value="3"> Buyer 

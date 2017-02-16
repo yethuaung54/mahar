@@ -7291,16 +7291,15 @@ ol.list-post-comment {
     text-align: center;
     text-transform: uppercase;
 }
-.form-my-account input[type="text"] {
+.form-my-account input[type="text"] , .form-my-account input[type="password"]{
     border: 1px solid #e5e5e5;
     color: #999;
     font-weight: 700;
     height: 50px;
     padding: 0 20px;
-    text-transform: uppercase;
     width: 100%;
 }
-.form-my-account input[type="text"]:focus{
+.form-my-account input[type="text"]:focus , .form-my-account input[type="password"]:focus{
 	border-color:#fe9c00;
 }
 .form-my-account .title {

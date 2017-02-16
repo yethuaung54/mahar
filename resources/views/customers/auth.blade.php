@@ -6,13 +6,15 @@
 				<div class="row">
 					<div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
 						<h2 class="title-shop-page">My Account</h2>
+						@include('common.errors')
 						<div class="row">
 							<div class="col-md-6 col-sm-6 col-ms-12">
 								<div class="account-login">
-									<form class="form-my-account">
+									<form class="form-my-account" method="POST" action="{{ url('login')}}">
+										{{ csrf_field()}}
 										<h2 class="title">Login</h2>
-										<p><input type="text" value="Username *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-										<p><input type="text" value="Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
+										<p><input type="text" name="email" value="Email *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
+										<p><input type="password" name="password" placeholder="Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
 										{{--<p>
 											<input type="checkbox"  id="remember" /> <label for="remember">Remember me</label>
 											<a href="#">Lost Password?</a>
@@ -23,22 +25,18 @@
 							</div>
 							<div class="col-md-6 col-sm-6 col-ms-12">
 								<div class="account-register">
-									<form class="form-my-account">
+									<form class="form-my-account" method="POST" action="{{ url('register')}}">
+										{{ csrf_field()}}
 										<h2 class="title">Register</h2>
-										<p><input type="text" value="Username *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-										<p><input type="text" value="E-mail *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-										{{--<br>
-										<div id="id-custom-fields">
-											<div class="form-group">
-												<div class="margiv-top-10">
-													<a href="javascript:;" onClick="addCustomField(); return false;"style="margin-top: 230px;margin-right: 96px;"> Add Your Company Info If You Are Vendor </a>
-												</div>
-											</div>
-										</div>--}}
-										<p><input type="text" value="Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-										<p><input type="text" value="Confirm Password *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-										<h4>Image</h4>
-										<p><input type="file" value="Image *" /></p>
+									
+										<p><input type="text" placeholder="Name *" name="name" /></p>
+
+										<p><input type="text" placeholder="Email *" name="email" /></p>
+									
+										<p><input type="password" name="password" placeholder="Password *" /></p>
+
+										<p><input type="password" name="password_confirmation" placeholder="Password Confirmation *" /></p>
+										
 
 										<p><input type="submit" value="Register" /></p>
 										{{--<script type="text/javascript">--}}

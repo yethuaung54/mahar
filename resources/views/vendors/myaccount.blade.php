@@ -4,24 +4,31 @@
     <div class="profile-content">
             <div class="row">
                 <div class="col-md-12">
-                    <form role="form" action="#">
+                    <form role="form" enctype="multipart/form-data" method="POST">
+                        {{ csrf_field()}}
+                        @include('common.errors')
+                        @include('common.success')
                         <div class="form-group">
                             <label class="control-label">Name</label>
-                            <input type="text" placeholder="John" class="form-control" /> </div>
+                            <input type="text" name="name" placeholder="John" class="form-control" value="{{ old('name',$user->name)}}" /> </div>
                         <div class="form-group">
                             <label class="control-label">Email</label>
-                            <input type="text" placeholder="testing@gmail.com" class="form-control" /> </div>
+                            <input type="text" name="email" placeholder="testing@gmail.com" class="form-control"  value="{{ old('email',$user->email)}}" /> </div>
                         <div class="form-group">
-                            <label class="control-label">Description</label>
-                            <input type="text" placeholder="about product" class="form-control" /> </div>
-                        <div class="form-group">
-                            <label class="control-label">Password</label>
-                            <input type="text" placeholder="20000Ks" class="form-control" /> </div>
+                            <label class="control-label">Company Name</label>
+                            <input type="text" name="company" placeholder="Enter your company" class="form-control" value="{{ old('company', $user->company)}}" /> </div>
+                         <div class="form-group">
+                            <label class="control-label">City / State</label>
+                            <input type="text" name="city" placeholder="Enter your region" class="form-control" value="{{ old('city', $user->city)}}" /> </div>
+                         <div class="form-group">
+                            <label class="control-label">Address</label>
+                            <input type="text" name="address" placeholder="Enter your Address" class="form-control" value="{{ old('address', $user->address)}}" /> </div>    
+                        
                         <div class="form-group">
                             <label class="control-label">Image</label>
-                            <input type="file" placeholder="example.jpg"  /> </div>
+                            <input type="file" name="image" placeholder=""  /> </div>
                         <div class="margiv-top-10">
-                            <a href="javascript:;" class="btn green"> Update Changes </a>
+                        <button type="submit" class="btn green">Save info</button>
                             <a href="home" class="btn default"> Cancel </a>
                         </div>
                     </form>

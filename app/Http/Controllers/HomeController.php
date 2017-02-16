@@ -10,33 +10,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Auth;
+
 class HomeController extends Controller
 {
     
-    // public function __construct() {
-    //     $this->middleware('dealer');
-    // }
-
+ 
     public function index()
-    {
-        
-        return view('home');
-        // return view('customers.index');
-    }
-
-    public function about()
-    {
-        return view('customers.about');
-    }
-
-    public function contact()
-    {
-        return view('customers.contact');
-    }
-
-    public function loginForm()
-    {
-        return view('customers.auth');
+    {   
+        return view('customers.index');
     }
 
     public function itemDetail()
@@ -44,23 +25,20 @@ class HomeController extends Controller
         return view('customers.detail');
     }
 
-    public function wishList()
-    {
-        return view('customers.wishlist');
-    }
-
     public function itemCategory()
     {
         return view('customers.itemcategory');
     }
 
-    public function orderForm()
+    public function contact()
     {
-        return view('customers.order');
+        return view('customers.contact');
     }
 
-    public function account()
+    public function about()
     {
-        return view('customers.accountview');
+        return view('customers.about');
     }
+
+    
 }
