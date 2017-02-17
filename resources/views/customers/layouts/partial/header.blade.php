@@ -72,15 +72,7 @@
                         <div class="col-md-7 col-sm-6 col-xs-12">
                             <div class="smart-search">
                                 <div class="select-category">
-                                    <a href="itemcategory" class="category-toggle-link"><span>All Categories</span></a>
-                                    <ul class="list-category-toggle sub-menu-top">
-                                        <li><a href="itemcategory">Computer &amp; Office</a></li>
-                                        <li><a href="itemcategory">Elextronics</a></li>
-                                        <li><a href="itemcategory">Jewelry &amp; Watches</a></li>
-                                        <li><a href="itemcategory">Home &amp; Garden</a></li>
-                                        <li><a href="itemcategory">Bags &amp; Shoes</a></li>
-                                        <li><a href="itemcategory">Kids &amp; Baby</a></li>
-                                    </ul>
+                                    <p style="margin-left: 35px;margin-top: 8px;">Search Products</p>
                                 </div>
                                 <form class="smart-search-form">
                                     <input type="text" value="Search Bar Will Be Included in Phase2" onfocus="if (this.value==this.defaultValue) this.value = ''" onblur="if (this.value=='') this.value = this.defaultValue" />
@@ -104,9 +96,14 @@
                                 <h2 class="title-category-dropdown"><span>Categories</span></h2>
                                 <div class="wrap-category-dropdown">
                                     <ul class="list-category-dropdown">
-                                        <li class="has-cat-mega">
-                                            <a href="itemcategory">Mobiles & Tablets</a>
-                                            <img src="/assets/images/home1/cat1.png" alt="" />
+                                        @foreach($categories as $key=>$cats)
+                                                <li class="has-cat-mega">
+                                                    <a href="itemcategory">{{$cats->name}}</a>
+                                                    <img src="{{$image[$key]}}" alt="" />
+                                                </li>
+                                        @endforeach
+                                        {{--<li class="has-cat-mega">
+
                                         </li>
                                         <li  class="has-cat-mega">
                                             <a href="itemcategory">Computers</a>
@@ -139,44 +136,21 @@
                                         <li>
                                             <a href="itemcategory">Sports & Outdoors</a>
                                             <img src="/assets/images/home1/cat10.png" alt="" />
-                                        </li>
-                                        <li>
-                                            <a href="itemcategory">Others</a>
-                                            <img src="" alt="" />
-                                        </li>
+                                        </li>--}}
                                     <!-- <a href="itemcategory" class="expand-category-link"></a> -->
                                     </ul>
                                 </div>
                             </div>
                             <!-- End Category Dropdown -->
                         </div>
-                        <div class="col-md-9 col-sm-12 col-xs-6">
+                        <div class="col-md-9">
                             <nav class="main-nav">
                                 <ul>
-                                    <li>
-                                        <a href="itemcategory">home</a>
-                                    </li>
-                                    <li><!-- class="has-mega-menu" -->
-                                        <a href="itemcategory">Fashion</a>
-                                    </li>
-                                    <li>
-                                        <a href="itemcategory">Furniture</a>
-                                    </li>
-                                    <li> <!-- class="menu-item-has-children" -->
-                                        <a href="itemcategory">Food</a>
-                                    </li>
-                                    <li>
-                                        <a href="itemcategory">Electronis</a>
-                                    </li>
-                                    <li>
-                                        <a href="itemcategory">Sports</a>
-                                    </li>
-                                    <li>
-                                        <a href="itemcategory">HealthCare</a>
-                                    </li>
-                                    <li>
-                                        <a href="itemcategory">Vechicle</a>
-                                    </li>
+                                    @foreach($catlatest5 as $catlat5)
+                                        <li>
+                                            <a href="itemcategory">{{$catlat5->name}}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </nav>
                             <!-- End Main Nav -->

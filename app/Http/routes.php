@@ -12,36 +12,28 @@
 */
 use App\Task;
 
-Route::get('/', function(){
+Route::get('/', function () {
     return redirect('/user/home');
 });
 
-Route::get('/hello', function(Task $task) {
+Route::get('/hello', function (Task $task) {
     return $task->get();
 });
 
+//Unguard routes that can access any user
+Route::get('item/{id}', 'Customer\CustomerController@itemDetail');
+Route::get('category/{id}', 'Customer\CustomerController@showCategory');
+Route::get('home', 'Customer\CustomerController@index');
+Route::get('about', 'Customer\CustomerController@about');
+Route::get('contact', 'Customer\CustomerController@contact');
 
-Route::group(['prefix' => 'user'], function () {
-
-    Route::get('home', 'HomeController@index');
-    Route::get('about', 'HomeController@about');
-    Route::get('contact', 'HomeController@contact');
-    Route::get('loginform', 'HomeController@loginForm');
-    Route::get('itemdetail', 'HomeController@itemDetail');
-    Route::get('itemcategory', 'HomeController@itemCategory');
-    Route::get('wishlist', 'HomeController@wishList');
-    Route::get('orderform', 'HomeController@orderForm');
-    Route::get('myaccount', 'HomeController@account');
-
-});
-
-Route::group(['prefix'=>'admin'],function(){
-   Route::get('loginform','AdminController@loginForm');
-   Route::get('home','AdminController@index');
-   Route::get('vendorposts','AdminController@vendorPost');
-   Route::get('buyerposts','AdminController@buyerPost');
-   Route::get('myaccount','AdminController@myAccount');
-   Route::get('allusers','AdminController@allUser');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('loginform', 'AdminController@loginForm');
+    Route::get('home', 'AdminController@index');
+    Route::get('vendorposts', 'AdminController@vendorPost');
+    Route::get('buyerposts', 'AdminController@buyerPost');
+    Route::get('myaccount', 'AdminController@myAccount');
+    Route::get('allusers', 'AdminController@allUser');
 
 });
 

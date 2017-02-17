@@ -32,4 +32,9 @@ class User extends Authenticatable
         return $this->roleName[$this->role];
     }
 
+    public function Wishlist()
+    {
+        return $this->hasMany('App\WishList');
+    }
+
 }

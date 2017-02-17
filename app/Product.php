@@ -8,7 +8,8 @@ class Product extends Model
 {
    //
     protected $table = "products";
-    // protected $fillable = ['name'];
+
+    protected $fillable = ['id','name','descr','price','quantity','image_url','hashtag','custom_field','slug','cat_id','dealer_id','created_at','updated_at'];
 
     /**
      * Display the specified resource.
@@ -18,9 +19,7 @@ class Product extends Model
      */
     public function user ()
     {
-    	
     	return $this->belongsTo(User::class);
-    
     }
 
     /**
@@ -29,10 +28,13 @@ class Product extends Model
      * @param  int  
      * @return Response
      */
-    public function category ()
+    public function Category()
     {
-    
-    	return $this->belongsTo(User::class);
-    
+        return $this->belongsTo('App\Category', 'cat_id', 'id');
+    }
+
+    public function Wishlist()
+    {
+        return $this->hasMany('App\WishList');
     }
 }

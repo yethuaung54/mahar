@@ -2,28 +2,11 @@
     <div class="sidebar-shop sidebar-left">
         <div class="widget widget-filter">
             <div class="category-filter">
-                <h2 class="widget-title">CATEGORY</h2>
+                <h2 class="widget-title">ALL CATEGORY LISTING</h2>
                 <ul>
-                    <li><a href="itemcategory"> Maxi Dresses (32)</a></li>
-                    <li><a href="itemcategory"> Vintage Dresses (15)</a></li>
-                    <li><a href="itemcategory"> Bodycon Dresses (24)</a></li>
-                    <li><a href="itemcategory"> Fit & Flare Dresses (8)</a></li>
-                    <li><a href="itemcategory"> Maxi Dresses (32)</a></li>
-                    <li><a href="itemcategory"> Vintage Dresses (15)</a></li>
-                    <li><a href="itemcategory"> Bodycon Dresses (24)</a></li>
-                    <li><a href="itemcategory"> Fit & Flare Dresses (8)</a></li>
-                    <li><a href="itemcategory"> Maxi Dresses (32)</a></li>
-                    <li><a href="itemcategory"> Vintage Dresses (15)</a></li>
-                    <li><a href="itemcategory"> Bodycon Dresses (24)</a></li>
-                    <li><a href="itemcategory"> Fit & Flare Dresses (8)</a></li>
-                    <li><a href="itemcategory"> Maxi Dresses (32)</a></li>
-                    <li><a href="itemcategory"> Vintage Dresses (15)</a></li>
-                    <li><a href="itemcategory"> Bodycon Dresses (24)</a></li>
-                    <li><a href="itemcategory"> Fit & Flare Dresses (8)</a></li>
-                    <li><a href="itemcategory"> Maxi Dresses (32)</a></li>
-                    <li><a href="itemcategory"> Vintage Dresses (15)</a></li>
-                    <li><a href="itemcategory"> Bodycon Dresses (24)</a></li>
-                    <li><a href="itemcategory"> Fit & Flare Dresses (8)</a></li>
+                    @foreach($allcat as $cats)
+                        <li style="text-decoration: underline;margin-bottom: 5px;"><a href="category/{{$cats->id}}">{{$cats->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <!-- End Category -->
@@ -92,7 +75,7 @@
                 <div class="item">
                     <div class="item-widget-adv">
                         <div class="adv-widget-thumb">
-                            <a href="itemcategory"><img src="/assets/images/item3.jpg" width="300" height="500" /></a>
+                            <a href=""><img src="/assets/images/item3.jpg" width="300" height="500" /></a>
                         </div>
                         <div class="adv-widget-info">
                             <h3>New Collection</h3>
@@ -103,7 +86,7 @@
                 <div class="item">
                     <div class="item-widget-adv">
                         <div class="adv-widget-thumb">
-                            <a href="itemcategory"><img src="/assets/images/item9.jpg" width="300" height="500" /></a>
+                            <a href=""><img src="/assets/images/item9.jpg" width="300" height="500" /></a>
                         </div>
                         <div class="adv-widget-info">
                             <h3>Quality usinesswear </h3>
@@ -114,7 +97,7 @@
                 <div class="item">
                     <div class="item-widget-adv">
                         <div class="adv-widget-thumb">
-                            <a href="itemcategory"><img src="/assets/images/item6.jpg" width="300" height="500" /></a>
+                            <a href=""><img src="/assets/images/item6.jpg" width="300" height="500" /></a>
                         </div>
                         <div class="adv-widget-info">
                             <h3>Hanbags Style 2016</h3>

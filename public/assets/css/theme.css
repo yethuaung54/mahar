@@ -1748,6 +1748,7 @@ blockquote {
     margin-bottom: 30px;
     padding: 10px;
     width: 100%;
+    height: 400px;
 }
 .item-deal-product .product-thumb {
     float: left;
@@ -2027,7 +2028,7 @@ blockquote {
 	color:#F9BC02;
 }
 .item-tags-category a {
-    border-right: 1px solid #999999;
+    border-right: 0px solid #999999;
     color: #999999;
     display: block;
     height: 13px;
@@ -2040,7 +2041,7 @@ blockquote {
 }
 .list-tags-category {
     border-bottom: 1px solid #e8e8e8;
-    padding: 35px 0;
+    padding: 50px 0;
 }
 .item-tags-category ul li:last-child a{
 	border:none;

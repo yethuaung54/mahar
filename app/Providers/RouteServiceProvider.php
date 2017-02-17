@@ -57,6 +57,7 @@ class RouteServiceProvider extends ServiceProvider
         ], function ($router) {
             require app_path('Http/routes.php');
             require app_path('Http/Controllers/Dealer/routes.dealer.php');
+            require app_path('Http/Controllers/Customer/routes.customer.php');
         });
     }
 }
