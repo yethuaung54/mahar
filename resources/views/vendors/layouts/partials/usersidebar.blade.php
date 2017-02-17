@@ -15,8 +15,8 @@
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
-                    <div class="profile-usertitle-name"> Marcus Doe </div>
-                    <div class="profile-usertitle-job"> Vendor-ID 0013 </div></br>
+                    <div class="profile-usertitle-name"> {{ Auth::guard('dealer')->user()->name }} </div>
+                    <div class="profile-usertitle-job"> Vendor-ID 00{{  Auth::guard('dealer')->user()->id }}</div></br>
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
             </div>

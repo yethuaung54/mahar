@@ -27,106 +27,41 @@
                             <table class="table table-hover table-light">
                                 <thead>
                                 <tr class="uppercase">
-                                    <th colspan="2"> MEMBER </th>
-                                    <th> Productname </th>
+                                    <th colspan="2"> Product </th>
+                                    <th> Category </th>
+                                    <th> Description </th>
                                     <th> Price </th>
+                                    <th> Qty </th>
                                     <th> Uploaded Date </th>
                                 </tr>
                                 </thead>
-                                <tr>
+                                @foreach ($products as $product)
+                                   <tr>
                                     <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar4.jpg"> </td>
+                                        <img class="user-pic" src="{{ url($product->image_url) }}"> </td>
+
                                     <td>
-                                        <a href="javascript:;" class="primary-link">Item1</a>
+                                    <a href="javascript:;" class="primary-link">{{ $product->name }} </a>
                                     </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar5.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Item2</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar6.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Item3</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar7.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Item4</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar7.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Item5</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
+                                        <td> {{ $product->category->name }} </td>
+                                        <td> {{ substr($product->descr, 0, 100) }}... </td>
+                                        <td> {{ $product->price }} </td>
+                                        <td> {{ $product->quantity }} </td>
+                                        <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $product->created_at )->format('l jS \\of F Y h:i:s A') }}</td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
+                                
                             </table>
                         </div>
                     </div>
                 </div>
                 <!-- END PORTLET -->
+
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                            <!-- <div class="product-order">
-                                <a href="itemdetail" class="product-order-toggle">Position</a>
-                                <ul class="product-order-list">
-                                    <li><a href="itemdetail">Name</a></li>
-                                    <li><a href="itemdetail">Price</a></li>
-                                </ul>
-                            </div>
-                            <div class="product-per-page">
-                                <a href="itemdetail" class="per-page-toggle">show <span>6</span></a>
-                                <ul class="per-page-list">
-                                    <li><a href="itemdetail">6</a></li>
-                                    <li><a href="itemdetail">9</a></li>
-                                    <li><a href="itemdetail">12</a></li>
-                                    <li><a href="itemdetail">18</a></li>
-                                    <li><a href="itemdetail">24</a></li>
-                                </ul>
-                            </div> -->
                             <div class="search-pagination" style="float: right;">
-                                <ul class="pagination">
-                                    <li class="page-active">
-                                        <a href="javascript:;"> 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> 2 </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> 3 </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> 4 </a>
-                                    </li>
-                                </ul>
+                                 {{ $products->links() }}
                             </div>
                         </div>
                     </div>

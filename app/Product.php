@@ -8,7 +8,17 @@ class Product extends Model
 {
    //
     protected $table = "products";
-    // protected $fillable = ['name'];
+    protected $fillable = [
+        'name' , 
+        'cat_id' , 
+        'hashtag' , 
+        'descr' , 
+        'price' ,
+        'quantity' , 
+        'dealer_id',
+        'slug',
+        'image_url'
+    ];
 
     /**
      * Display the specified resource.
@@ -16,10 +26,10 @@ class Product extends Model
      * @param  int  
      * @return Response
      */
-    public function user ()
+    public function dealer ()
     {
     	
-    	return $this->belongsTo(User::class);
+    	return $this->belongsTo(Dealer::class);
     
     }
 
@@ -29,10 +39,10 @@ class Product extends Model
      * @param  int  
      * @return Response
      */
-    public function category ()
+    public function category()
     {
     
-    	return $this->belongsTo(User::class);
+    	return $this->belongsTo(Category::class,'cat_id');
     
     }
 }
