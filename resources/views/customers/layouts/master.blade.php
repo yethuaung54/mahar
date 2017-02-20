@@ -102,7 +102,7 @@
                                     <ul class="list-category-dropdown">
                                         @foreach($categories as $key=>$cats)
                                             <li class="has-cat-mega">
-                                                <a href="{!! url('category/'.$cats->id) !!}">{{$cats->name}}</a>
+                                                <a href="{!! url('category/'.$cats->slug) !!}">{{$cats->name}}</a>
                                                 <img src="{{$image[$key]}}" alt=""/>
                                             </li>
                                         @endforeach
@@ -116,7 +116,7 @@
                                 <ul>
                                     @foreach($catlatest5 as $catlat5)
                                         <li>
-                                        <a href="{!! url('category/'.$catlat5->id) !!}">{{$catlat5->name}}</a>
+                                        <a href="{!! url('category/'.$catlat5->slug) !!}">{{$catlat5->name}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -177,7 +177,7 @@
                     <div class="item-tags-category">
                         @foreach($footcat as $key=>$footcats)
                             <div class="col-md-2">
-                                <a href="{!! url('category/'.$footcats->id) !!}"> <h2><span style="{{$color[$key]}}text-align: center;">{{$footcats->name}}</span></h2></a>
+                                <a href="{!! url('category/'.$footcats->slug) !!}"> <h2><span style="{{$color[$key]}}text-align: center;">{{$footcats->name}}</span></h2></a>
                             </div>
                         @endforeach
                     </div>

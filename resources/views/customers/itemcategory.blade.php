@@ -17,14 +17,14 @@
 									<div class="col-md-6 col-sm-6 col-xs-12">
 										<div class="item-deal-product">
 											<div class="product-thumb">
-												<a class="product-thumb-link" href="{!! url('item/'.$pros->id) !!}">
+												<a class="product-thumb-link" href="{!! url('item/'.$pros->slug) !!}">
 													<img class="first-thumb" width="250" height="300" src="{{$pros->image_url}}">
 													<img class="second-thumb" alt="" src="{{$pros->image_url}}">
 												</a>
 												<div class="product-info-cart">
 													<div class="product-extra-link">
 														<a class="wishlist-link" href="{!! url('user/addtowishlist/'.$pros->id)!!}"><i class="fa fa-heart-o"></i></a>
-														<a class="quickview-link" href="{!! url('item/'.$pros->id) !!}"><i class="fa fa-search"></i></a>
+														<a class="quickview-link" href="{!! url('item/'.$pros->slug) !!}"><i class="fa fa-search"></i></a>
 													</div>
 													<a class="addcart-link" href="{!! url('user/orderform/'.$pros->id)!!}"><i class="fa fa-shopping-basket"></i> Order </a>
 												</div>

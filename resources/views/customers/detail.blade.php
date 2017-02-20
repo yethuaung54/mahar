@@ -84,7 +84,7 @@
 									@foreach($relatedpros as $repros)
 										<li class="clearfix">
 											<div class="product-related-thumb">
-												<a href="#"><img src="{{$repros->image_url}}" alt="" /></a>
+												<a href="{!! url('item/'.$repros->slug) !!}"><img src="{{$repros->image_url}}" alt="" /></a>
 											</div>
 											<div class="product-related-info">
 												<h3 class="title-product"><a href="#">{{$repros->name}}</a></h3>

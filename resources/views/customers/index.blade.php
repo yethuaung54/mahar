@@ -65,7 +65,7 @@
                                 <ul>
                                     @foreach($catlatest5second as $key=>$cat5sec)
                                         <li>
-                                            <a href="{!! url('category/'.$cat5sec->id) !!}">{{$cat5sec->name}}
+                                            <a href="{!! url('category/'.$cat5sec->slug) !!}">{{$cat5sec->name}}
                                                 <span>{{$count[$key]}}</span>
                                             </a>
                                         </li>
@@ -85,7 +85,7 @@
                                                 <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                                     <div class="item-product">
                                                         <div class="product-thumb">
-                                                            <a class="product-thumb-link" href="item/{{$pros->id}}">
+                                                            <a class="product-thumb-link" href="item/{{$pros->slug}}">
                                                                 <img class="first-thumb" width="300" height="300"
                                                                      src="{{$pros->image_url}}">
                                                                 <img class="second-thumb" alt="" src="{{$pros->image_url}}">
@@ -94,7 +94,7 @@
                                                                 <div class="product-extra-link">
                                                                     <a class="wishlist-link" href="{!! url('user/addtowishlist/'.$pros->id)!!}"><i
                                                                                 class="fa fa-heart-o"></i></a>
-                                                                    <a href="item/{{$pros->id}}"><i
+                                                                    <a href="item/{{$pros->slug}}"><i
                                                                                 class="fa fa-search"></i></a>
                                                                 </div>
                                                                 <a class="addcart-link" href="{!! url('user/orderform/'.$pros->id)!!}"><i
@@ -102,7 +102,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-info">
-                                                            <h3 class="title-product"><a href="item/{{$pros->id}}">{{$pros->name}}</a></h3>
+                                                            <h3 class="title-product"><a href="item/{{$pros->slug}}">{{$pros->name}}</a></h3>
                                                             <div class="info-price">
                                                                 <span>{{$pros->price}}Ks</span>
                                                             </div>
