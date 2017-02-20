@@ -21,8 +21,8 @@ Route::get('/hello', function (Task $task) {
 });
 
 //Unguard routes that can access any user
-Route::get('item/{id}', 'Customer\CustomerController@itemDetail');
-Route::get('category/{id}', 'Customer\CustomerController@showCategory');
+Route::get('item/{slug}', 'Customer\CustomerController@itemDetail');
+Route::get('category/{slug}', 'Customer\CustomerController@showCategory');
 Route::get('home', 'Customer\CustomerController@index');
 Route::get('about', 'Customer\CustomerController@about');
 Route::get('contact', 'Customer\CustomerController@contact');
