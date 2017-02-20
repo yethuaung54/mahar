@@ -5,7 +5,7 @@
                 <h2 class="widget-title">ALL CATEGORY LISTING</h2>
                 <ul>
                     @foreach($allcat as $cats)
-                        <li style="text-decoration: underline;margin-bottom: 5px;"><a href="category/{{$cats->id}}">{{$cats->name}}</a></li>
+                        <li style="text-decoration: underline;margin-bottom: 5px;"><a href="category/{{$cats->slug}}">{{$cats->name}}</a></li>
                     @endforeach
                 </ul>
             </div>
