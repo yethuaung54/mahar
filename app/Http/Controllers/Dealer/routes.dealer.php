@@ -15,20 +15,21 @@ Route::group(['prefix' => 'dealer'], function () {
 
     Route::get('login', 'Dealer\Auth\AuthController@showLoginForm');
     Route::post('login', 'Dealer\Auth\AuthController@login');
-    Route::get('logout', 'Dealer\Auth\AuthController@logout');
     // For Vendor Register
     Route::get('register', 'Dealer\Auth\AuthController@showRegistrationForm');
     Route::post('register', 'Dealer\Auth\AuthController@register');
 
-    Route::get('home', 'VendorController@index');
-    Route::get('myposts', 'VendorController@myPosts');
-    Route::get('buyerposts', 'VendorController@buyerPosts');
-    Route::get('newitem', 'VendorController@newItem');
-    Route::post('newitem', 'VendorController@saveItem');
-    // Route::get('loginform', 'VendorController@loginForm');
-    Route::get('myaccount', 'VendorController@myAccount');
-    Route::post('myaccount', 'VendorController@updateAccount');
+    Route::group(['middleware' => 'dealer'], function () {
+        Route::get('home', 'VendorController@index');
+        Route::get('myposts', 'VendorController@myPosts');
+        Route::get('buyerposts', 'VendorController@buyerPosts');
+        Route::get('newitem', 'VendorController@newItem');
+        Route::post('newitem', 'VendorController@saveItem');
+        Route::get('myaccount', 'VendorController@myAccount');
+        Route::post('myaccount', 'VendorController@updateAccount');
+        Route::get('logout', 'Dealer\Auth\AuthController@logout');
+    });
 
-});
+    });
 
 

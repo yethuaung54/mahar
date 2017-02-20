@@ -33,6 +33,9 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = 'dealer/myaccount';
+
+    protected $redirectAfterLogout = 'dealer/login';
+
    
     /**
      * Create a new authentication controller instance.
@@ -90,8 +93,7 @@ class AuthController extends Controller
     public function showRegistrationForm()
     {
         return view('vendors.registerform');
-    }  
-
+    }
 
   
 }

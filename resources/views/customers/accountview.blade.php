@@ -3,7 +3,7 @@
     <div id="content">
         <div class="content-page">
             <div class="container">
-                <h2 class="title-shop-page">Item Category</h2>
+                <h2 class="title-shop-page">User Info</h2>
                 <div class="list-super-deal">
                     <h3>Name : {{ $user->name }} </h3>
                     <h3>Email : {{ $user->email }}</h3> 

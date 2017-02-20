@@ -27,8 +27,8 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <ul class="top-menu">
-                            <li><a href="about">About</a></li>
-                            <li><a href="contact">Contact</a></li>
+                            <li><a href="{!! url('user/about') !!}">About</a></li>
+                            <li><a href="{!! url('user/contact') !!}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-12">
@@ -44,7 +44,7 @@
                                 </li>
                             @else
                                 <li class="top-help ">
-                                    <a href="user/login">Log In | Register</a>
+                                    <a href="{{ url('user/login') }}">Log In | Register</a>
                                 </li>
                             @endif
 
@@ -74,7 +74,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-3 col-xs-12">
                             <div class="logo">
-                                <a href="home"><img src="/assets/images/im0.jpg" style="width:120px" alt="" /></a>
+                                <a href="{!! url('home') !!}"><img src="/assets/images/im0.jpg" style="width:120px" alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-6 col-xs-12">
@@ -83,14 +83,16 @@
                                     <p style="margin-left: 35px;margin-top: 8px;">Search Products</p>
                                 </div>
                                 <form class="smart-search-form">
-                                    <input type="text" value="Search Bar Will Be Included in Phase2" onfocus="if (this.value==this.defaultValue) this.value = ''" onblur="if (this.value=='') this.value = this.defaultValue" />
-                                    <input type="submit" value="" />
+                                    <input type="text" value="Search Bar Will Be Included in Phase2"
+                                           onfocus="if (this.value==this.defaultValue) this.value = ''"
+                                           onblur="if (this.value=='') this.value = this.defaultValue"/>
+                                    <input type="submit" value=""/>
                                 </form>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-3 col-xs-12 hidden-xs">
                             <div class="mini-cart">
-                                <a href="wishlist" class="logout">
+                                <a href="{!! url('user/wishlist') !!}" class="logout">
                                     <span><i class="fa fa-heart-o"></i> WishList</span>
                                 </a>
                             </div>
@@ -106,46 +108,10 @@
                                     <ul class="list-category-dropdown">
                                         @foreach($categories as $key=>$cats)
                                             <li class="has-cat-mega">
-                                                <a href="itemcategory">{{$cats->name}}</a>
-                                                <img src="{{$image[$key]}}" alt="" />
+                                                <a href="{!! url('category/'.$cats->slug) !!}">{{$cats->name}}</a>
+                                                <img src="{{$image[$key]}}" alt=""/>
                                             </li>
-                                            @endforeach
-                                            {{--<li class="has-cat-mega">
-
-                                            </li>
-                                            <li  class="has-cat-mega">
-                                                <a href="itemcategory">Computers</a>
-                                                <img src="/assets/images/home1/cat2.png" alt="" />
-                                            </li>
-                                            <li>
-                                                <a href="itemcategory">Electronics</a>
-                                                <img src="/assets/images/home1/cat3.png" alt="" />
-                                            </li>
-                                            <li>
-                                                <a href="itemcategory">Fashion</a>
-                                                <img src="/assets/images/home1/cat4.png" alt="" />
-                                            </li>
-                                            <li>
-                                                <a href="itemcategory">Footwear</a>
-                                                <img src="/assets/images/home1/cat5.png" alt="" />
-                                            </li>
-                                            <li>
-                                                <a href="itemcategory">Jewelry & Watches</a>
-                                                <img src="/assets/images/home1/cat6.png" alt="" />
-                                            </li>
-                                            <li>
-                                                <a href="itemcategory">Home Appliances</a>
-                                                <img src="/assets/images/home1/cat8.png" alt="" />
-                                            </li>
-                                            <li>
-                                                <a href="itemcategory">Beauty & Perfumes</a>
-                                                <img src="/assets/images/home1/cat9.png" alt="" />
-                                            </li>
-                                            <li>
-                                                <a href="itemcategory">Sports & Outdoors</a>
-                                                <img src="/assets/images/home1/cat10.png" alt="" />
-                                            </li>--}}
-                                                    <!-- <a href="itemcategory" class="expand-category-link"></a> -->
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -156,7 +122,7 @@
                                 <ul>
                                     @foreach($catlatest5 as $catlat5)
                                         <li>
-                                            <a href="itemcategory">{{$catlat5->name}}</a>
+                                            <a href="{!! url('category/'.$catlat5->slug) !!}">{{$catlat5->name}}</a>
                                         </li>
                                     @endforeach
                                 </ul>

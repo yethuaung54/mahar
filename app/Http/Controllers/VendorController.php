@@ -19,7 +19,6 @@ class VendorController extends Controller
     protected $dealerId;
 
     public function __construct() {
-        $this->middleware('dealer');
         $this->dealerId = Auth::guard('dealer')->user()->id;
     }
 

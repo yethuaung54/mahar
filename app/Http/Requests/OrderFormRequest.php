@@ -16,6 +16,12 @@ class OrderFormRequest extends Request
         return true;
     }
 
+
+    public function after($validator)
+    {
+        return true;
+    }
+    
     /**
      * Get the validation rules that apply to the request.
      *

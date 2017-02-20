@@ -13,7 +13,7 @@
 use App\Task;
 
 Route::get('/', function () {
-    return redirect('/user/home');
+    return redirect('home');
 });
 
 Route::get('/hello', function (Task $task) {
@@ -26,6 +26,8 @@ Route::get('category/{slug}', 'Customer\CustomerController@showCategory');
 Route::get('home', 'Customer\CustomerController@index');
 Route::get('about', 'Customer\CustomerController@about');
 Route::get('contact', 'Customer\CustomerController@contact');
+Route::get('user/login', 'Auth\AuthController@showLoginForm');
+Route::get('user/logout', 'Auth\AuthController@logout');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('loginform', 'AdminController@loginForm');
