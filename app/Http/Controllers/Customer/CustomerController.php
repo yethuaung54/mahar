@@ -127,6 +127,8 @@ class CustomerController extends Controller
 
     public function account()
     {
-        return view('customers.accountview');
+        $user = Auth::user();
+
+        return view('customers.accountview', compact('user'));
     }
 }
