@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Category;
+use App\Http\Requests\OrderFormRequest;
 use App\Order;
 use App\Orderdetail;
 use App\Product;
@@ -47,9 +48,11 @@ class CustomerController extends Controller
         return view('customers.auth');
     }
 
-    public function itemDetail(Request $request)
+    public function itemDetail($slug)
     {
-        $productdetail = Product::find($request->id);
+        ;
+
+        $productdetail = Product::find(Product::whereSlug($slug)->firstOrFail()->id);
         $relatedpros = Product::where('cat_id',$productdetail->cat_id)->paginate(5);
         return view('customers.detail',compact('productdetail','relatedpros'));
     }
@@ -80,9 +83,9 @@ class CustomerController extends Controller
         return view('customers.wishlist',compact('count','products'));
     }
 
-    public function showCategory(Request $request)
+    public function showCategory($slug)
     {
-        $products = Product::where('cat_id',$request->id)->paginate(4);
+        $products = Product::where('cat_id',Category::whereSlug($slug)->firstOrFail()->id)->paginate(4);
         $count = $products->count();
         return view('customers.itemcategory',compact('products','count'));
     }
@@ -93,8 +96,9 @@ class CustomerController extends Controller
         return view('customers.order',compact('product'));
     }
 
-    public function postOrder(Request $request)
+    public function postOrder(OrderFormRequest $request)
     {
+        $request->validate();
         $data = [
           "address" => $request->get('address'),
           "township" => $request->get('township'),
@@ -114,7 +118,7 @@ class CustomerController extends Controller
             ];
             if (Orderdetail::create($data))
             {
-                return redirect('home')->with('successmessage', ' Item Has Successfully Ordered');
+                return redirect('home')->with('successmessage', ' Item Has Successfully Ordered. Delivery System Will Come To Your Address Along With the Item');
             }
         }else{
             return redirect()->back()->with('failmessage', 'Connetion time out..');
