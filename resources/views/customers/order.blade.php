@@ -6,7 +6,16 @@
 				<div class="row">
 					<div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
 						<h2 class="title-shop-page">Order Form</h2>
-                        @if(session()->has('successmessage'))
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    @if(session()->has('successmessage'))
                             <div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>
                                 <strong>Success!</strong>{{ session()->get('successmessage') }}
                             </div>
@@ -14,10 +23,10 @@
                         <form class="form-my-account" method="post" action="{!! url('user/postorder/'.$product->id)!!}">{{ csrf_field() }}
                             <div class="row" style="width: 1020px;">
                                 <div class="col-md-6">
-                                    <p><input type="text" name="address" value="Detail Address *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-                                    <p><input type="text" name="township" value="TownShip *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
+                                    <p><input type="text" name="address" placeholder="Detail Address *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
+                                    <p><input type="text" name="township" placeholder="TownShip *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
                                     <p>
-                                        <textarea cols="30" name="ordernote" rows="10" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''">Order Notes</textarea>
+                                        <textarea cols="30" name="ordernote" placeholder="Order Notes" rows="10" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''"></textarea>
                                     </p>
                                 </div>
 
