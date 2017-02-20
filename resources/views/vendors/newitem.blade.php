@@ -1,29 +1,36 @@
 @extends('vendors.layouts.master')
 @section('content')
+    @include('common.errors')
+    @include('common.success')
     <div class="portlet-body">
-        <div class="tab-content">
+        <div class="row tab-content">
+
             <!-- PERSONAL INFO TAB -->
-            <div class="tab-pane active" id="tab_1_1">
+            <div class="col-md-6 tab-pane active" id="tab_1_1">
                 <h2>Upload your products to sell</h2>
-                <form role="form" action="#">
+                <form role="form" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field()}}
                     <div class="form-group">
                         <label class="control-label">Product Name</label>
-                        <input type="text" placeholder="name" class="form-control" /> </div>
+                        <input type="text" placeholder="Eenter Product Name" name="name" class="form-control" value="{{old('name')}}" /> </div>
                     <div class="form-group">
                         <label class="control-label">Product Category</label>
-                            <select class="form-control"name="category">
-                                <option>Category1</option>
-                                <option>Category2</option>
-                                <option>Category3</option>
-                                <option>Category4</option>
+                            <select class="form-control" name="cat_id">
+                                <option value="-1">~~ Choose one of category ~~ </option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }} </option> 
+                                @endforeach
                             </select>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Item Related Tags</label>
-                        <input type="text" placeholder="medical,women,pregnancy" class="form-control" /> </div>
+                        <input type="text" name="hashtag" placeholder="Choose at least 3 hashtags " class="form-control" value="{{old('hashtags')}}" /> </div>
                     <div class="form-group">
                         <label class="control-label">Description</label>
-                        <input type="text" placeholder="about product" class="form-control" /> </div>
+                        <textarea name="descr" class="form-control" value="{{old('descr')}}">
+                           
+                        </textarea>
+                    </div>
                     <div id="id-custom-fields">
                         <div class="form-group">
                             <div class="margiv-top-10">
@@ -33,20 +40,19 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Price</label>
-                        <input type="text" placeholder="20000Ks" class="form-control" /> </div>
+                        <input type="text" name="price" value="{{old('price')}}" placeholder="20000Ks" class="form-control" /> </div>
                     <div class="form-group">
                         <label class="control-label">Quantity</label>
-                        <input type="text" placeholder="5" class="form-control" /> </div>
+                        <input type="text" name="quantity" value="{{old('quantity')}}" placeholder="5" class="form-control" /> </div>
                     <div class="form-group">
                         <label class="control-label">Image</label>
-                        <input type="file" placeholder="example.jpg"  /> </div>
+                        <input type="file" placeholder="example.jpg" name="image_url" /> </div>
                     <div class="margiv-top-10">
-                        <a href="javascript:;" class="btn green"> Save Changes </a>
+                        <button type="submit" class="btn green" >Save Changes</button>
                         <a href="home" class="btn default"> Cancel </a>
                     </div>
-
+                    <hr>
                     <script type="text/javascript">
-
                         var customFieldIndex = 0;
 
                         function addCustomField() {

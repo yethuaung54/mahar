@@ -15,8 +15,8 @@ class ComposerServiceProvider extends ServiceProvider
     {
         //
         view()->composer(
-            'customers.layouts.master',
-            'App\Http\ViewComposers\ProfileComposer'
+            'vendors.layouts.partials.header',
+            'App\Http\ViewComposers\VendorProfileComposer'
         );
     }
 

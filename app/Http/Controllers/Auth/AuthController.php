@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = 'user/myaccount';
 
     /**
      * Create a new authentication controller instance.
@@ -52,7 +52,6 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'type' => 'required|in:2,3'
         ]);
     }
 
@@ -67,8 +66,19 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'role' => $data ['type'],
+            'role' => 3,
             'password' => bcrypt($data['password']),
         ]);
     }
+    public function showLoginForm()
+    {
+        return view('customers.auth'); 
+    }
+
+    public function showRegistrationForm()
+    {
+       
+        return view('customers.auth');
+    }  
+
 }

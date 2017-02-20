@@ -27,19 +27,28 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <ul class="top-menu">
-                            <li><a href="about">About</a></li>
-                            <li><a href="contact">Contact</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-9 col-sm-8 col-xs-12">
+                   
+                        <div class="col-md-9 col-sm-8 col-xs-12">
                         <ul class="top-info">
+                          @if (Auth::check())
                             <li class="top-account has-child">
-                                <a href="myaccount">My Account</a>
+
+                                <a href="{{ url('user/myaccount') }}">My Account</a>
                                 <ul class="sub-menu-top">
-                                    <li><a href="myaccount"><i class="fa fa-user"></i> Account Info</a></li>
-                                    <li><a href="logout"><i class="fa fa-sign-in"></i> LogOut</a></li>
+                                    <li><a href="{{ url('user/myaccount') }}"><i class="fa fa-user"></i> Account Info</a></li>
+                                    <li><a href="{{ url('user/logout') }}"><i class="fa fa-sign-in"></i> LogOut</a></li>
                                 </ul>
                             </li>
+                            @else
+                                <li class="top-help ">
+                                  <a href="user/login">Log In | Register</a>
+                                </li>          
+                            @endif
+
                             <li class="top-help has-child">
                                 <a href="itemcategory">Help</a>
                                 <ul class="sub-menu-top">
@@ -47,7 +56,7 @@
                                     <li><a href="#">Submit A Complaint</a></li>
                                 </ul>
                             </li><!--
-							<li class="top-mobile"><a href="itemcategory">Mobile </a></li> -->
+                            <li class="top-mobile"><a href="itemcategory">Mobile </a></li> -->
                             <li class="top-language has-child">
                                 <a href="#" class="language-selected"><img src="/assets/images/home1/flag-default.jpg" alt=""/>English </a>
                                 <ul class="sub-menu-top">
@@ -56,6 +65,8 @@
                             </li>
                         </ul>
                     </div>
+                  
+                    
                 </div>
             </div>
         </div>

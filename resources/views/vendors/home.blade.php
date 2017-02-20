@@ -28,56 +28,28 @@
                             <table class="table table-hover table-light">
                                 <thead>
                                 <tr class="uppercase">
-                                    <th colspan="2"> MEMBER </th>
-                                    <th> Productname </th>
-                                    <th> Price </th>
+                                    <th colspan="2"> Buyer </th>
+                                    <th> Product </th>
+                                    <th> Total Price </th>
                                     <th> Buy Date </th>
                                 </tr>
                                 </thead>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar4.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Brain</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar5.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Nick</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar6.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Tim</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar7.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Tom</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
+
+                                @foreach ($orderItems as $orderItem)
+                                    <tr>
+                                        <td class="fit">
+                                            <img class="user-pic" src="
+                                                                /assets/pages/media/users/avatar4.jpg"> </td>
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">{{ $orderItem->user->name}}</a>
+                                        </td>
+                                        <td> {{ $orderItem->product->name }} </td>
+                                        <td> {{ $orderItem->price }} </td>
+                                        <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d', $orderItem->order_date)->format('l jS \\of F Y') }}</td>
+                                    </tr>
+                                @endforeach
+                                
+                               
                             </table>
                         </div>
                     </div>
@@ -109,56 +81,30 @@
                             <table class="table table-hover table-light">
                                 <thead>
                                 <tr class="uppercase">
-                                    <th colspan="2"> MEMBER </th>
-                                    <th> Productname </th>
+                                      <th colspan="2"> Product </th>
+                                    <th> Category </th>
+                                    <th> Description </th>
                                     <th> Price </th>
+                                    <th> Qty </th>
                                     <th> Uploaded Date </th>
                                 </tr>
                                 </thead>
-                                <tr>
+                                 @foreach ($products as $product)
+                                   <tr>
                                     <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar4.jpg"> </td>
+                                        <img class="user-pic" src="{{ url($product->image_url) }}"> </td>
+
                                     <td>
-                                        <a href="javascript:;" class="primary-link">Item1</a>
+                                    <a href="javascript:;" class="primary-link">{{ $product->name }} </a>
                                     </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar5.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Item2</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar6.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Item3</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
-                                <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="
-                                                            /assets/pages/media/users/avatar7.jpg"> </td>
-                                    <td>
-                                        <a href="javascript:;" class="primary-link">Item4</a>
-                                    </td>
-                                    <td> Testing123 </td>
-                                    <td> $345 </td>
-                                    <td> Feb.10.2017 </td>
-                                </tr>
+                                        <td> {{ $product->category->name }} </td>
+                                        <td> {{ substr($product->descr, 0, 100) }}... </td>
+                                        <td> {{ $product->price }} </td>
+                                        <td> {{ $product->quantity }} </td>
+                                        <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $product->created_at )->format('l jS \\of F Y h:i:s A') }}</td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                     </div>
