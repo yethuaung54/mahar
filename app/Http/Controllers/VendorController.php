@@ -12,6 +12,7 @@ use App\Http\Requests\VendorItemRequest;
 // Model namespace
 use App\Category;
 use App\Product;
+use App\Order;
 
 class VendorController extends Controller
 {
@@ -24,23 +25,33 @@ class VendorController extends Controller
 
     public function index()
     {
-        $products =  Product::where('dealer_id', $this->dealerId)
-                     ->OrderBy('id','desc')
-                     ->limit(5)->get();
+        $orderItems = Order::where('dealer_id', $this->dealerId)
+                      ->OrderBy('id','desc')
+                      ->limit(5)->get();
 
-        return view('vendors.home', compact('products'));
+        $products   = Product::where('dealer_id', $this->dealerId)
+                      ->OrderBy('id','desc')
+                      ->limit(5)->get();
+
+        return view('vendors.home', compact('products','orderItems'));
     }
 
     public function myPosts()
     {
-        $products = Product::where('dealer_id', $this->dealerId)->orderBy('id','desc')->paginate(5);
+        $products = Product::where('dealer_id', $this->dealerId)
+                    ->orderBy('id','desc')
+                    ->paginate(10);
    
         return view('vendors.myposts', compact('products'));
     }
 
     public function buyerPosts()
     {
-        return view('vendors.buyerposts');
+        $orderItems = Order::where('dealer_id', $this->dealerId)
+                      ->OrderBy('id','desc')
+                      ->paginate(5);
+
+        return view('vendors.buyerposts', compact('orderItems'));
     }
 
     public function newItem(Request $request)
@@ -51,24 +62,26 @@ class VendorController extends Controller
 
     public function saveItem(VendorItemRequest $request)
     {
-        $dealer = Auth::guard('dealer')->user();
-       
+        //  ProductImage Upload in public/dealer folder 
+        $data = $request->except(['_token','image','_url']);
+
         if ($request->hasFile('image_url')) {
             $file = $request->file('image_url');
             $tempFileName = $this->genFileName($file->getClientOriginalExtension());
             $file->move('assets/images/dealer', $tempFileName);
             $filePath = 'assets/images/dealer/'.$tempFileName;
         }
+        // Custom Fields
+        if (!empty($request->custom_fields_keys) && !empty($request->custom_fields_values)) {
+           $data['custom_field'] = json_encode(array_combine($request->custom_fields_keys, $request->custom_fields_values));
+        }
 
-        $data = $request->except(['_token','image','_url']);
-
-        $data['dealer_id'] = $dealer->id;
-        $data['slug'] = $data['name'] .'-'. random_int(100, 10000);
+        $data['dealer_id'] = $this->dealerId;
         $data['image_url'] = $filePath;
         
         Product::create($data);
 
-       return redirect('dealer/newitem')->with('success','Your new item has been succesfully saved!');
+        return redirect('dealer/newitem')->with('success','Your new item has been succesfully saved!');
 
     }
 
@@ -87,9 +100,19 @@ class VendorController extends Controller
     public function updateAccount (VendorAccountRequest $request)
     {   
         $request->validate();
+        
+        $data = $request->except(['_token','image','_url']);
+
+        if ($request->hasFile('image_url')) {
+            $file = $request->file('image_url');
+            $tempFileName = $this->genFileName($file->getClientOriginalExtension());
+            $file->move('assets/images/dealer', $tempFileName);
+            $filePath = 'assets/images/dealer/'.$tempFileName;
+            $data['image_url'] = $filePath;
+        }
 
         $user = Auth::guard('dealer')->user();
-        $user->update($request->all());
+        $user->update($data);
 
         return redirect('dealer/myaccount')->with('success','Your update request has been succesfully updated!');
     }

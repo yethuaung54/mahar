@@ -26,7 +26,7 @@
                         
                         <div class="form-group">
                             <label class="control-label">Image</label>
-                            <input type="file" name="image" placeholder=""  /> </div>
+                            <input type="file" name="image_url" placeholder=""  /> </div>
                         <div class="margiv-top-10">
                         <button type="submit" class="btn green">Save info</button>
                             <a href="home" class="btn default"> Cancel </a>

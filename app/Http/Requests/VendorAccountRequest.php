@@ -30,7 +30,7 @@ class VendorAccountRequest extends Request
             'company' => 'required|max:255',
             'city'    => 'required|max:255',
             'address' => 'required|max:255',
-        
+            'image_url' => 'max:5000|mimes:jpeg,bmp,png',
         ];
     }
 

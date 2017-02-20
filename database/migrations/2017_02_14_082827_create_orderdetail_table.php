@@ -12,12 +12,12 @@ class CreateOrderdetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('orderdetail', function (Blueprint $table) {
+        Schema::create('orderdetails', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('order_id')->unsigned();
             $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('quantity');
-            $table->decimal('priceEach', 10, 2);
+            $table->decimal('price_each', 10, 2);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateOrderdetailTable extends Migration
      */
     public function down()
     {
-        Schema::drop('orderdetail');
+        Schema::drop('orderdetails');
     }
 }
