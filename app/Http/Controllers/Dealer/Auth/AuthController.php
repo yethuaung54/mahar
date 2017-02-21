@@ -86,8 +86,9 @@ class AuthController extends Controller
         ]);
     }
    
-    public function showLoginForm()
+    public function showLoginForm(Request $request)
     {
+        $request->session()->forget('url');
         return view('vendors.loginform');
     }
 
