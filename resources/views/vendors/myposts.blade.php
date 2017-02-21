@@ -24,35 +24,38 @@
                     </div>
                     <div class="portlet-body">
                         <div class="table-scrollable table-scrollable-borderless">
-                            <table class="table table-hover table-light">
-                                <thead>
-                                <tr class="uppercase">
-                                    <th colspan="2"> Product </th>
-                                    <th> Category </th>
-                                    <th> Description </th>
-                                    <th> Price </th>
-                                    <th> Qty </th>
-                                    <th> Uploaded Date </th>
-                                </tr>
-                                </thead>
-                                @foreach ($products as $product)
-                                   <tr>
-                                    <td class="fit">
-                                        <img class="user-pic" src="{{ url($product->image_url) }}"> </td>
-
-                                    <td>
-                                    <a href="javascript:;" class="primary-link">{{ $product->name }} </a>
-                                    </td>
-                                        <td> {{ $product->category->name }} </td>
-                                        <td> {{ substr($product->descr, 0, 100) }}... </td>
-                                        <td> {{ $product->price }} </td>
-                                        <td> {{ $product->quantity }} </td>
-                                        <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $product->created_at )->format('l jS \\of F Y h:i:s A') }}</td>
-                                        <td></td>
+                            @if($productcount)
+                                <table class="table table-hover table-light">
+                                    <thead>
+                                    <tr class="uppercase">
+                                        <th colspan="2"> Product </th>
+                                        <th> Category </th>
+                                        <th> Description </th>
+                                        <th> Price </th>
+                                        <th> Qty </th>
+                                        <th> Uploaded Date </th>
                                     </tr>
-                                @endforeach
-                                
-                            </table>
+                                    </thead>
+                                    @foreach ($products as $product)
+                                        <tr>
+                                            <td class="fit">
+                                                <img class="user-pic" src="{{ url($product->image_url) }}"> </td>
+
+                                            <td>
+                                                <a href="javascript:;" class="primary-link">{{ $product->name }} </a>
+                                            </td>
+                                            <td> {{ $product->category->name }} </td>
+                                            <td> {{ substr($product->descr, 0, 100) }}... </td>
+                                            <td> {{ $product->price }} </td>
+                                            <td> {{ $product->quantity }} </td>
+                                            <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $product->created_at )->format('l jS \\of F Y h:i:s A') }}</td>
+                                            <td></td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            @else
+                                <h3>You Don't Have Any Uploaded Items Yet!</h3>
+                            @endif
                         </div>
                     </div>
                 </div>

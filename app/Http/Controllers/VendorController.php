@@ -31,8 +31,9 @@ class VendorController extends Controller
         $products   = Product::where('dealer_id', $this->dealerId)
                       ->OrderBy('id','desc')
                       ->limit(5)->get();
-
-        return view('vendors.home', compact('products','orderItems'));
+        $ordercount = $orderItems->count();
+        $productcount = $products->count();
+        return view('vendors.home', compact('products','orderItems','ordercount','productcount'));
     }
 
     public function myPosts()
@@ -40,8 +41,8 @@ class VendorController extends Controller
         $products = Product::where('dealer_id', $this->dealerId)
                     ->orderBy('id','desc')
                     ->paginate(10);
-   
-        return view('vendors.myposts', compact('products'));
+        $productcount = $products->count();
+        return view('vendors.myposts', compact('products','productcount'));
     }
 
     public function buyerPosts()
@@ -49,8 +50,8 @@ class VendorController extends Controller
         $orderItems = Order::where('dealer_id', $this->dealerId)
                       ->OrderBy('id','desc')
                       ->paginate(5);
-
-        return view('vendors.buyerposts', compact('orderItems'));
+        $ordercount = $orderItems->count();
+        return view('vendors.buyerposts', compact('orderItems','ordercount'));
     }
 
     public function newItem(Request $request)
