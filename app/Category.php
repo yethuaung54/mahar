@@ -24,13 +24,10 @@ class Category extends Model
 
             $cat->slug = str_slug($cat->name);
 
-            $latestSlug = static::whereRaw("slug RLIKE '^{$cat->slug}(-[0-9]*)?$'")->latest('id')->pluck('slug');
-
-            if ($latestSlug) {
-                $pieces = explode('-', $latestSlug);
-                $number = intval(end($pieces));
-                $cat->slug .= ($number + 1 .uniqid());
+            if (static::whereSlug($cat->slug)->exists()) {
+               $cat->slug .= '-' . uniqid();
             }
+
         });
     }
 }
