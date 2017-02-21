@@ -12,7 +12,7 @@
                     {{ csrf_field()}}
                     <div class="form-group">
                         <label class="control-label">Product Name</label>
-                        <input type="text" placeholder="Eenter Product Name" name="name" class="form-control" value="{{old('name')}}" /> </div>
+                        <input type="text" placeholder="Enter Product Name" name="name" class="form-control" value="{{old('name')}}" /> </div>
                     <div class="form-group">
                         <label class="control-label">Product Category</label>
                             <select class="form-control" name="cat_id">
@@ -22,12 +22,12 @@
                                 @endforeach
                             </select>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label class="control-label">Item Related Tags</label>
-                        <input type="text" name="hashtag" placeholder="Choose at least 3 hashtags " class="form-control" value="{{old('hashtags')}}" /> </div>
+                        <input type="text" name="hashtag" placeholder="Choose at least 3 hashtags " class="form-control" value="{{old('hashtags')}}" /> </div> --}}
                     <div class="form-group">
                         <label class="control-label">Description</label>
-                        <textarea name="descr" class="form-control" value="{{old('descr')}}"></textarea>
+                        <textarea name="descr" class="form-control" rows="10">{{old('descr')}}</textarea>
                     </div>
                     <div id="id-custom-fields">
                         <div class="form-group">

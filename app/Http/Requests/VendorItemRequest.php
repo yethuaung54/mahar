@@ -27,7 +27,7 @@ class VendorItemRequest extends Request
             'name'      => 'required|max:255',
             'cat_id'    => 'required|not_in:-1',
             'descr'     => 'required|max:255',
-            'hashtag'   => 'required|max:100',
+            // 'hashtag'   => 'required|max:100',
             'price'     => 'required|numeric',
             'quantity'  => 'required|integer',
             'image_url' => 'required|max:5000|mimes:jpeg,bmp,png',
