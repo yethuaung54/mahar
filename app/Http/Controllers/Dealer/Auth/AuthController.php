@@ -33,6 +33,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = 'dealer/myaccount';
+    protected $redirectPath = 'dealer/myaccount';
 
     protected $redirectAfterLogout = 'dealer/login';
 
