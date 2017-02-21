@@ -13,30 +13,34 @@
                     </div>
                     <div class="portlet-body">
                         <div class="table-scrollable table-scrollable-borderless">
-                            <table class="table table-hover table-light">
-                                 <thead>
-                                <tr class="uppercase">
-                                    <th colspan="2"> Buyer </th>
-                                    <th> Product </th>
-                                    <th> Total Price </th>
-                                    <th> Buy Date </th>
-                                </tr>
-                                </thead>
-
-                                @foreach ($orderItems as $orderItem)
-                                    <tr>
-                                        <td class="fit">
-                                            <img class="user-pic" src="
-                                                                /assets/pages/media/users/avatar4.jpg"> </td>
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">{{ $orderItem->user->name}}</a>
-                                        </td>
-                                        <td> {{ $orderItem->product->name }} </td>
-                                        <td> {{ $orderItem->price }} </td>
-                                        <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d', $orderItem->order_date)->format('l jS \\of F Y') }}</td>
+                            @if($ordercount > 0)
+                                <table class="table table-hover table-light">
+                                    <thead>
+                                    <tr class="uppercase">
+                                        <th colspan="2"> Buyer </th>
+                                        <th> Product </th>
+                                        <th> Total Price </th>
+                                        <th> Buy Date </th>
                                     </tr>
-                                @endforeach
-                            </table>
+                                    </thead>
+
+                                    @foreach ($orderItems as $orderItem)
+                                        <tr>
+                                            <td class="fit">
+                                                <img class="user-pic" src="
+                                                                /assets/pages/media/users/avatar4.jpg"> </td>
+                                            <td>
+                                                <a href="javascript:;" class="primary-link">{{ $orderItem->user->name}}</a>
+                                            </td>
+                                            <td> {{ $orderItem->product->name }} </td>
+                                            <td> {{ $orderItem->price }} </td>
+                                            <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d', $orderItem->order_date)->format('l jS \\of F Y') }}</td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            @else
+                                <h3>We Will Notify You In Here When Customer Bought Your Products</h3>
+                            @endif
                         </div>
                     </div>
                     <div class="row">
