@@ -27,8 +27,8 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <ul class="top-menu">
-                            <li><a href="{!! url('user/about') !!}">About</a></li>
-                            <li><a href="{!! url('user/contact') !!}">Contact</a></li>
+                            <li><a href="{!! url('about') !!}">About</a></li>
+                            <li><a href="{!! url('contact') !!}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-md-9 col-sm-8 col-xs-12">
