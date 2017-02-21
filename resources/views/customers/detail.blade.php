@@ -16,7 +16,7 @@
 										<div class="col-md-5 col-sm-12 col-xs-12">
 											<div class="detail-gallery">
 												<div class="mid">
-													<img src="{{$productdetail->image_url}}" width="350" height="450"/>
+													<img src="{{ asset($productdetail->image_url) }}" width="350" height="450"/>
 												</div>
 											</div>
 											<!-- End Gallery -->
@@ -84,7 +84,7 @@
 									@foreach($relatedpros as $repros)
 										<li class="clearfix">
 											<div class="product-related-thumb">
-												<a href="{!! url('item/'.$repros->slug) !!}"><img src="{{$repros->image_url}}" alt="" /></a>
+												<a href="{!! url('item/'.$repros->slug) !!}"><img src="{{ asset($repros->image_url) }}" alt="" /></a>
 											</div>
 											<div class="product-related-info">
 												<h3 class="title-product"><a href="#">{{$repros->name}}</a></h3>

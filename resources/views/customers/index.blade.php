@@ -87,8 +87,8 @@
                                                         <div class="product-thumb">
                                                             <a class="product-thumb-link" href="item/{{$pros->slug}}">
                                                                 <img class="first-thumb" width="300" height="300"
-                                                                     src="{{$pros->image_url}}">
-                                                                <img class="second-thumb" alt="" src="{{$pros->image_url}}">
+                                                                     src="{{ asset($pros->image_url) }}">
+                                                                <img class="second-thumb" alt="" src="{{ asset($pros->image_url) }}">
                                                             </a>
                                                             <div class="product-info-cart">
                                                                 <div class="product-extra-link">

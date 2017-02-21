@@ -27,9 +27,7 @@
                         <input type="text" name="hashtag" placeholder="Choose at least 3 hashtags " class="form-control" value="{{old('hashtags')}}" /> </div>
                     <div class="form-group">
                         <label class="control-label">Description</label>
-                        <textarea name="descr" class="form-control" value="{{old('descr')}}">
-                           
-                        </textarea>
+                        <textarea name="descr" class="form-control" value="{{old('descr')}}"></textarea>
                     </div>
                     <div id="id-custom-fields">
                         <div class="form-group">
@@ -40,10 +38,10 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Price</label>
-                        <input type="text" name="price" value="{{old('price')}}" placeholder="20000Ks" class="form-control" /> </div>
+                        <input type="text" name="price" value="{{old('price')}}" placeholder="Example - 20000" class="form-control" /> </div>
                     <div class="form-group">
                         <label class="control-label">Quantity</label>
-                        <input type="text" name="quantity" value="{{old('quantity')}}" placeholder="5" class="form-control" /> </div>
+                        <input type="text" name="quantity" value="{{old('quantity')}}" placeholder="Example - 5" class="form-control" /> </div>
                     <div class="form-group">
                         <label class="control-label">Image</label>
                         <input type="file" placeholder="example.jpg" name="image_url" /> </div>
