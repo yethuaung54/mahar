@@ -13,23 +13,55 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // Menu Items Category
+        
+        $items = $this->getCategory();
      	$faker = Faker::create();
-     	foreach (range(1,10) as $index) {
+
+     	foreach ($items as $item) {
 	        $category = new Category;
-	        $category->name = $faker->name;
+	        $category->name = $item;
 	        $category->weight = $faker->numberBetween(1,10);
-	        $category->slug = $faker->slug;
 	        $category->save();
         }
 
-        // $array = ['Hello' , 'Blah', 'aabc', 'dae'];
-        // foreach ($array as $key => $value) {
-        // 		 $category = new Category;
-        // 	     $category->name = $value;
-        // 	     $category->weight = $key;
-        // 	     $category->save();
-        // }
-
+    }
+    protected function getCategory()
+    {
+        return $items =[
+          "Mobile&Tablets",
+          "Computers",
+          "Electronics",
+          "Fashion",
+          "FootWear",
+          "Jewelry&watches",
+          "HomeAppliances",
+          "Beauty&Perfumes",
+          "Sports&Outdoors",
+          "Garden",
+          "HealthCares",
+          "Vechicles",
+          "Women Accessories",
+          "Men Accessories",
+          "Kid&Baby Accessories",
+          "Bag Fashions",
+          "Shoes&FootWear",
+          "Skirts & Pants",
+          "Blouse & Shirts",
+          "Men Pants",
+          "Gym Equipments",
+          "Fancies",
+          "Glasses",
+          "Dr. Kaylee Purdy Jr.",
+          "Maximo Wiegand",
+          "Zechariah Donnelly",
+          "Kory Kovacek MD",
+          "Janet Wolf IV",
+          "Kurtis Berge",
+          "Alexandrine Schiller",
+          "Jonathan Sporer",
+          "Connie Buckridge DVM",
+          "Ova Mann"
+        ];
     }
 }

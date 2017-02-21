@@ -13,4 +13,4 @@ Route::group(['prefix' => 'user'], function () {
         Route::post('postorder/{id}', 'Customer\CustomerController@postOrder');
         Route::get('myaccount', 'Customer\CustomerController@account');
     });
-    });
+});
