@@ -20,7 +20,7 @@ class CustomerController extends Controller
     public function index()
     {
         $allcat = Category::all();
-        $allpro = DB::table('products')->paginate(6);
+        $allpro = DB::table('products')->orderBy('id', 'desc')->paginate(6);
         $cat20 = Category::all()->take(20);
         $catlatest5second = array($cat20[15],$cat20[16],$cat20[17],$cat20[18],$cat20[19]);
         $count = array(
