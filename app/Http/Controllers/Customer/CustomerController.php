@@ -114,7 +114,7 @@ class CustomerController extends Controller
             $data = [
                 "order_id" => $orderid,
                 "quantity" => 1,
-                "priceEach" => Product::find($request->id)->price,
+                "price_each" => Product::find($request->id)->price,
             ];
             if (Orderdetail::create($data))
             {
