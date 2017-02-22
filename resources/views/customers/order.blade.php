@@ -23,10 +23,10 @@
                         <form class="form-my-account" method="post" action="{!! url('user/postorder/'.$product->id)!!}">{{ csrf_field() }}
                             <div class="row" style="width: 1020px;">
                                 <div class="col-md-6">
-                                    <p><input type="text" name="address" placeholder="Detail Address *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
-                                    <p><input type="text" name="township" placeholder="TownShip *" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" /></p>
+                                    <p><input type="text" name="address" placeholder="Detail Address *" value="{{old('address')}}" /></p>
+                                    <p><input type="text" name="township" placeholder="TownShip *" value="{{old('township')}}"/></p>
                                     <p>
-                                        <textarea cols="30" name="ordernote" placeholder="Order Notes" rows="10" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''"></textarea>
+                                        <textarea cols="30" name="ordernote" placeholder="Order Notes" value="{{old('ordernote')}}" rows="10"></textarea>
                                     </p>
                                 </div>
 
