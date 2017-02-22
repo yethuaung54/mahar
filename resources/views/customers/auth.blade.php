@@ -38,7 +38,8 @@
 										<p><input type="password" name="password_confirmation" placeholder="Password Confirmation *" /></p>
 										
 
-										<p><input type="submit" value="Register" /></p>
+										<p><input type="submit" value="Register" /><a href="{{ url('dealer/register')}}" style="margin-top: 18px;">Register Account As A Dealer</a>
+										</p>
 										{{--<script type="text/javascript">--}}
 
 											{{--var customFieldIndex = 0;--}}
@@ -64,8 +65,7 @@
 												{{--}--}}
 											{{--}--}}
 										{{--</script>--}}
-									</form>
-								</div>		
+									</form></div>
 							</div>
 						</div>
 					</div>
