@@ -153,7 +153,7 @@
                         <div class="portlet-title">
                             <div class="caption caption-md">
                                 <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject font-blue-madison bold uppercase">Customers who bought products today</span>
+                                <span class="caption-subject font-blue-madison bold uppercase">All Orders</span>
                             </div>
                             <!-- Date filter -->
                             <!-- <div class="actions">
@@ -174,8 +174,10 @@
                                     <tr class="uppercase">
                                         <th colspan="2"> MEMBER </th>
                                         <th> Productname </th>
+                                        <th> ProductOwner (Vendor) </th>
                                         <th> Price </th>
                                         <th> Buy Date </th>
+                                        <th> Status </th>
                                     </tr>
                                     </thead>
                                     <tr>
@@ -186,8 +188,10 @@
                                             <a href="javascript:;" class="primary-link">Brain</a>
                                         </td>
                                         <td> Testing123 </td>
+                                        <td> Vendor1 </td>
                                         <td> $345 </td>
                                         <td> Feb.10.2017 </td>
+                                        <td> Delivered </td>
                                     </tr>
                                     <tr>
                                         <td class="fit">
@@ -197,8 +201,10 @@
                                             <a href="javascript:;" class="primary-link">Nick</a>
                                         </td>
                                         <td> Testing123 </td>
+                                        <td> Vendor2 </td>
                                         <td> $345 </td>
                                         <td> Feb.10.2017 </td>
+                                        <td> Cancel </td>
                                     </tr>
                                     <tr>
                                         <td class="fit">
@@ -208,8 +214,10 @@
                                             <a href="javascript:;" class="primary-link">Tim</a>
                                         </td>
                                         <td> Testing123 </td>
+                                        <td> Vendor3 </td>
                                         <td> $345 </td>
                                         <td> Feb.10.2017 </td>
+                                        <td> Pending </td>
                                     </tr>
                                     <tr>
                                         <td class="fit">
@@ -219,8 +227,10 @@
                                             <a href="javascript:;" class="primary-link">Tom</a>
                                         </td>
                                         <td> Testing123 </td>
+                                        <td> Vendor4 </td>
                                         <td> $345 </td>
                                         <td> Feb.10.2017 </td>
+                                        <td> Delivered </td>
                                     </tr>
                                 </table>
                             </div>
