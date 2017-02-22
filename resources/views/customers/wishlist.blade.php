@@ -21,7 +21,7 @@
 									@foreach($products as $items)
 										<tr class="cart_item">
 											<td class="product-thumbnail">
-												<a href="#"><img  src="{{$items->purl}}"  width="300" height="70"/></a>
+												<a href="#"><img src="{{ asset($items->purl) }}"  width="300" height="70"/></a>
 											</td>
 											<td class="product-name">
 												<a href="#">{{$items->pname}}</a>
