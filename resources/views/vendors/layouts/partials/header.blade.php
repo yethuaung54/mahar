@@ -151,7 +151,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <li class="nav-item start ">
                     <a href="buyerposts" class="nav-link nav-toggle">
                         <i class="icon-bar-chart"></i>
-                        <span class="title">See Buyers' Posts</span>
+                        <span class="title">All Orders</span>
                         <span class="arrow"></span>
                     </a>
                 </li>

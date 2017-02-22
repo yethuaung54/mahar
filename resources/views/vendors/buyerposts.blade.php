@@ -8,7 +8,7 @@
                     <div class="portlet-title">
                         <div class="caption caption-md">
                             <i class="icon-bar-chart theme-font hide"></i>
-                            <span class="caption-subject font-blue-madison bold uppercase">Customers who bought your products</span>
+                            <span class="caption-subject font-blue-madison bold uppercase">All Orders</span>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -21,6 +21,7 @@
                                         <th> Product </th>
                                         <th> Total Price </th>
                                         <th> Buy Date </th>
+                                        <th> Status </th>
                                     </tr>
                                     </thead>
 
@@ -35,6 +36,7 @@
                                             <td> {{ $orderItem->product->name }} </td>
                                             <td> {{ $orderItem->price }} </td>
                                             <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d', $orderItem->order_date)->format('l jS \\of F Y') }}</td>
+                                            <td> {{ 'Delivered' }}</td>
                                         </tr>
                                     @endforeach
                                 </table>

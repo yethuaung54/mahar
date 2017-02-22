@@ -9,7 +9,7 @@
                     <div class="portlet-title">
                         <div class="caption caption-md">
                             <i class="icon-bar-chart theme-font hide"></i>
-                            <span class="caption-subject font-blue-madison bold uppercase">Customers who bought your products</span>
+                            <span class="caption-subject font-blue-madison bold uppercase">All Orders</span>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -22,6 +22,7 @@
                                         <th> Product </th>
                                         <th> Total Price </th>
                                         <th> Buy Date </th>
+                                        <th> Status </th>
                                     </tr>
                                     </thead>
 
@@ -36,6 +37,7 @@
                                             <td> {{ $orderItem->product->name }} </td>
                                             <td> {{ $orderItem->price }} </td>
                                             <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d', $orderItem->order_date)->format('l jS \\of F Y') }}</td>
+                                            <td> {{ 'Delivered' }}</td>
                                         </tr>
                                     @endforeach
                                 </table>
@@ -79,7 +81,7 @@
                                         <a href="javascript:;" class="primary-link">{{ $product->name }} </a>
                                         </td>
                                             <td> {{ $product->category->name }} </td>
-                                            <td> {{ substr($product->descr, 0, 100) }}... </td>
+                                            <td> {{ substr($product->descr, 0, 70) }}... </td>
                                             <td> {{ $product->price }} </td>
                                             <td> {{ $product->quantity }} </td>
                                             <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $product->created_at )->format('l jS \\of F Y h:i:s A') }}</td>
