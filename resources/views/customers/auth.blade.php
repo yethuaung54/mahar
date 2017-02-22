@@ -29,9 +29,9 @@
 										{{ csrf_field()}}
 										<h2 class="title">Register</h2>
 									
-										<p><input type="text" placeholder="Name *" name="name" /></p>
+										<p><input type="text" placeholder="Name *" name="name" value="{{old('name')}}" /></p>
 
-										<p><input type="text" placeholder="Email *" name="email" /></p>
+										<p><input type="text" placeholder="Email *" name="email" value="{{old('email')}}"/></p>
 									
 										<p><input type="password" name="password" placeholder="Password *" /></p>
 
