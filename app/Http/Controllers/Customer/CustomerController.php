@@ -50,7 +50,6 @@ class CustomerController extends Controller
 
     public function itemDetail($slug)
     {
-        ;
 
         $productdetail = Product::find(Product::whereSlug($slug)->firstOrFail()->id);
         $relatedpros = Product::where('cat_id',$productdetail->cat_id)->paginate(5);
@@ -85,7 +84,7 @@ class CustomerController extends Controller
 
     public function showCategory($slug)
     {
-        $products = Product::where('cat_id',Category::whereSlug($slug)->firstOrFail()->id)->paginate(4);
+        $products = Product::where('cat_id',Category::whereSlug($slug)->firstOrFail()->id)->orderBy('id', 'desc')->paginate(4);
         $count = $products->count();
         return view('customers.itemcategory',compact('products','count'));
     }
