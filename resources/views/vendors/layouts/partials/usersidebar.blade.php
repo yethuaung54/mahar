@@ -10,7 +10,7 @@
             <div class="portlet light profile-sidebar-portlet ">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="{{ isset(Auth::guard('dealer')->user) ? asset(Auth::guard('dealer')->user()->image_url) : '/assets/images/dealerimg.png' }}" class="img-responsive" alt=""> </div>
+                    <img src="{{ !empty(Auth::guard('dealer')->user()->image_url) ? asset(Auth::guard('dealer')->user()->image_url) : '/assets/images/dealerimg.png' }}" class="img-responsive" alt=""> </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
