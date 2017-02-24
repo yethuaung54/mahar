@@ -1,5 +1,10 @@
 @extends('vendors.layouts.master')
 @section('content')
+<style type="text/css">
+    .bootstrap-tagsinput {
+    width: 100%;
+}
+</style>
     @include('common.errors')
     @include('common.success')
     <div class="portlet-body">
@@ -21,6 +26,10 @@
                                     <option value="{{ $category->id }}">{{ $category->name }} </option> 
                                 @endforeach
                             </select>
+                    </div>
+                    <div class="form-group">
+                    <label class="control-label">Item Related Tags</label>
+                        <input type="text" value="{{old('hashtag')}}" placeholder="Separate with commas" data-role="tagsinput" name="hashtag"/>
                     </div>
                     {{-- <div class="form-group">
                         <label class="control-label">Item Related Tags</label>
@@ -46,7 +55,7 @@
                         <label class="control-label">Image</label>
                         <input type="file" placeholder="example.jpg" name="image_url" /> </div>
                     <div class="margiv-top-10">
-                        <button type="submit" class="btn green" >Save Changes</button>
+                        <button type="submit" class="btn green">Save Changes</button>
                         <a href="home" class="btn default"> Cancel </a>
                     </div>
                     <hr>

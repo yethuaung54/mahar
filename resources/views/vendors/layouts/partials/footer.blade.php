@@ -64,6 +64,9 @@
 /assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="
 /assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/assets/taginput/bootstrap-tagsinput.min.js"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
 </body>
 

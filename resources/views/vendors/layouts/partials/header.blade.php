@@ -47,6 +47,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="/assets/layouts/layout2/css/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="/assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/taginput/bootstrap-tagsinput.css">
+
     <!-- END THEME LAYOUT STYLES -->
     <link rel="shortcut icon" href="favicon.ico" /> </head>
 <!-- END HEAD -->
