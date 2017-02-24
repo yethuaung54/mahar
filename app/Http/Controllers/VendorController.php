@@ -54,6 +54,15 @@ class VendorController extends Controller
         return view('vendors.buyerposts', compact('orderItems','ordercount'));
     }
 
+    public function creditMemo()
+    {
+        return view('vendors.creditmemo');
+    }
+
+    public function invoice()
+    {
+        return view('vendors.invoice');
+    }
     public function newItem(Request $request)
     {
         $categories = Category::all();

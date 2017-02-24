@@ -20,7 +20,7 @@
                                         <th colspan="2"> Buyer </th>
                                         <th> Product </th>
                                         <th> Total Price </th>
-                                        <th> Buy Date </th>
+                                        <th> Order Date </th>
                                         <th> Status </th>
                                     </tr>
                                     </thead>
@@ -37,6 +37,9 @@
                                             <td> {{ $orderItem->price }} </td>
                                             <td> {{ \Carbon\Carbon::createFromFormat('Y-m-d', $orderItem->order_date)->format('l jS \\of F Y') }}</td>
                                             <td> {{ 'Delivered' }}</td>
+                                            <td>
+                                                <a href="{!! url('dealer/invoice/')!!}" class="primary-link">{{ 'View Invoice'}}</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </table>

@@ -146,7 +146,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <li class="nav-item start ">
                     <a href="myposts" class="nav-link nav-toggle">
                         <i class="icon-layers"></i>
-                        <span class="title">See My Posts</span>
+                        <span class="title">My Inventory</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -158,7 +158,14 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li class="nav-item start ">
-                    <a href="newitem" class="nav-link nav-toggle">
+                    <a href="creditmemo" class="nav-link nav-toggle">
+                        <i class="icon-feed"></i>
+                        <span class="title">Credit Memo</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="nav-item start ">
+                    <a href="creditmemo" class="nav-link nav-toggle">
                         <i class="icon-basket"></i>
                         <span class="title">Upload New Product</span>
                         <span class="arrow"></span>
