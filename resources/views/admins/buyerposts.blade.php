@@ -27,7 +27,7 @@
                                     <th> Productname</th>
                                     <th> ProductOwner (Vendor) </th>
                                     <th> Price</th>
-                                    <th> Buy Date</th>
+                                    <th> Order Date</th>
                                     <th> Status</th>
                                 </tr>
                                 </thead>

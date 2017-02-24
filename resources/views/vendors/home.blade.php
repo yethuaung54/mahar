@@ -2,6 +2,64 @@
 @section('content')
     @include('vendors.layouts.partials.usersidebar')
     <div class="profile-content">
+        <div class="row widget-row">
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
+                    <h4 class="widget-thumb-heading">Today Balance</h4>
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-green icon-bulb"></i>
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">Ks</span>
+                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="1,644">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
+                    <h4 class="widget-thumb-heading">Weekly Sales</h4>
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-red icon-layers"></i>
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">Ks</span>
+                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="12,293">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
+                    <h4 class="widget-thumb-heading">Biggest Purchase</h4>
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-purple icon-screen-desktop"></i>
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">Ks</span>
+                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="4,815">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
+                    <h4 class="widget-thumb-heading">Average Monthly</h4>
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-blue icon-bar-chart"></i>
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">Ks</span>
+                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="52,071">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <!-- BEGIN PORTLET -->

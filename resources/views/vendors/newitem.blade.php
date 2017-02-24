@@ -22,9 +22,9 @@
                                 @endforeach
                             </select>
                     </div>
-                    {{-- <div class="form-group">
-                        <label class="control-label">Item Related Tags</label>
-                        <input type="text" name="hashtag" placeholder="Choose at least 3 hashtags " class="form-control" value="{{old('hashtags')}}" /> </div> --}}
+                     <div class="form-group">
+                        <label class="control-label">(Define Your Items What it is) Choose at least 3 Tags</label>
+                        <input type="text" name="hashtag" placeholder="Example- acer,brandnew,laptop" class="form-control" value="{{old('hashtags')}}" /> </div>
                     <div class="form-group">
                         <label class="control-label">Description</label>
                         <textarea name="descr" class="form-control" rows="10">{{old('descr')}}</textarea>
@@ -32,7 +32,7 @@
                     <div id="id-custom-fields">
                         <div class="form-group">
                             <div class="margiv-top-10">
-                                <a href="javascript:;" class="btn blue" onClick="addCustomField(); return false;"> Add More Description Fields </a>
+                                <a href="javascript:;" class="btn blue" onClick="addCustomField(); return false;"> Add More Attributes Fields </a>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                                 <input type="text" id="id-input-custom-field-key-' + customFieldIndex + '" name="custom_fields_keys[]" class="form-control" placeholder="Title" value="">\
                               </div>\
                               <div class="col-md-5">\
-                                                            <input type="text" id="id-input-custom-field-value-' + customFieldIndex + '" name="custom_fields_values[]" class="form-control" placeholder="Description" value="">\
+                                                            <input type="text" id="id-input-custom-field-value-' + customFieldIndex + '" name="custom_fields_values[]" class="form-control" placeholder="Attributew" value="">\
                               </div>\
                               <div class="col-md-2">\
                                 <a href="#" class="btn btn-danger" onClick="removeCustomField(' + customFieldIndex + '); return false;"><i class="entypo-trash"></i> Remove</a>\

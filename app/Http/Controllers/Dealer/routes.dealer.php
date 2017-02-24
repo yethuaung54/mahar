@@ -24,6 +24,8 @@ Route::group(['prefix' => 'dealer'], function () {
         Route::get('myposts', 'VendorController@myPosts');
         Route::get('buyerposts', 'VendorController@buyerPosts');
         Route::get('newitem', 'VendorController@newItem');
+        Route::get('creditmemo', 'VendorController@creditMemo');
+        Route::get('invoice', 'VendorController@invoice');
         Route::post('newitem', 'VendorController@saveItem');
         Route::get('myaccount', 'VendorController@myAccount');
         Route::post('myaccount', 'VendorController@updateAccount');
