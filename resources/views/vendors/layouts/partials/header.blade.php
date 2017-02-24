@@ -165,7 +165,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li class="nav-item start ">
-                    <a href="creditmemo" class="nav-link nav-toggle">
+                    <a href="newitem" class="nav-link nav-toggle">
                         <i class="icon-basket"></i>
                         <span class="title">Upload New Product</span>
                         <span class="arrow"></span>
