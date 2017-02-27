@@ -13,7 +13,7 @@
             <!-- PERSONAL INFO TAB -->
             <div class="col-md-6 tab-pane active" id="tab_1_1">
                 <h2>Upload your products to sell</h2>
-                <form role="form" method="POST" enctype="multipart/form-data">
+                <form id="newitem" role="form" method="POST" enctype="multipart/form-data">
                     {{ csrf_field()}}
                     <div class="form-group">
                         <label class="control-label">Product Name</label>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                     <label class="control-label">Item Related Tags</label>
-                        <input type="text" value="{{old('hashtag')}}" placeholder="Separate with commas" data-role="tagsinput" name="hashtag"/>
+                        <input type="text" value="{{old('hashtag')}}" placeholder="Separate with commas" data-role="tagsinput" name="hashtag" id="hashtags"/>
                     </div>
                     {{-- <div class="form-group">
                         <label class="control-label">Item Related Tags</label>
@@ -91,4 +91,5 @@
             </div>
         </div>
     </div>
+
 @endsection

@@ -76,6 +76,15 @@
 
 <script src="/assets/taginput/bootstrap-tagsinput.min.js"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+<script type="text/javascript">
+	$('#newitem').on('keyup keypress', function(e) {
+	  var keyCode = e.keyCode || e.which;
+	  if (keyCode === 13) { 
+	    e.preventDefault();
+	    return false;
+	  }
+	});
+</script>
 </body>
 
 </html>
